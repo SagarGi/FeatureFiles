@@ -15,4 +15,13 @@ Feature:login feature
         Then the user will be thrown invalid credentials message
 
 
+    Scenario Outline:when you input invalid email
+        Given a user has navigated to the login dashboard
+        When the user enters with a "<email>"
+        Then the user will thrown a "<message>"
+
+        Examples:
+        | email            | message|
+        | salipa98gmailcom | invalid email address|
+        | rits98.com       | Please enter Email address|
 
