@@ -6,7 +6,7 @@ Feature:login feature
 
     Scenario: Login to the ContactFox with Valid credentials
         Given a user  has navigated to the login dashboard
-        When  the user enters the valid credentials with email "valid email" and Password "valid password"
+        When  the user enters the valid credentials with email "valid email" and Password "valid password"S
         Then the user will be naviaged to the homepage
         # Examples:
         # |email|password|message|
