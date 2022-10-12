@@ -18,6 +18,6 @@ Feature:
         When  Users add invalid password "invalid password"  
         Then Message with the wrong password appear
     
-    |
+    
 
         
