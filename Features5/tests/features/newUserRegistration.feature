@@ -1,4 +1,4 @@
-Feature:
+Feature: Register
    As a user
    I want to register
    So that I can use the contact fox app
@@ -6,15 +6,14 @@ Feature:
    Background:
        Given user has been navigated to registration page
    
-   Scenario: New user registration
+   Scenario: New user registration with valid inputs
        When user enters following valid credentials:
          |name    |email                |password   |confirmPassword  |
          |Susmita |susmita412@gmail.com |zxcvbnm    |zxcvbnm          |
-         |Sita    |sita123@gmail.com    |abcdef     |abcdef           |
        And clicks "Register" button
        Then user should see the homepage
 
-    Scenario Outline: When new user registers with wrong input
+    Scenario Outline: When new user registers with invalid inputs
        When user enters "<name>","<email>","<password>" and "<confirmPassword>"
        And clicks "Register" button
        Then user should see the message "<error>"
