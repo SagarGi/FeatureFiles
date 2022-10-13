@@ -25,4 +25,4 @@ Feature:Search contact
       
     Scenario:Search with name
          When the user enters the name 
-         Then all the contacts saved with that name will shwon
+         Then all the contacts saved with that name will shown
