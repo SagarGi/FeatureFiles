@@ -3,7 +3,7 @@ Feature: Delete a contact
     I want to delete a contact 
     So that contact will be removed from contact list
 
-    Scenario:
+    Scenario: Delete contact from contact list
         Given User is logged in and user is navigated to Contact Fox page
         And Contacts are added with name as "<name>", email as "<email>", phone as "<phone>" and  contact type as "<contact-type>"
             |name|email        |phone     |contact-type|
