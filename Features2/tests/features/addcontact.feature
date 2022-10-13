@@ -28,7 +28,3 @@ Feature:AddContact
         | rits98.com       | Please enter an email address|
         | rira@gmail       | Please enter an email address|
         | risahgdgajda36gmail.com | Please enter an email address|
-
-
-# nothing to update 
-# as of now
