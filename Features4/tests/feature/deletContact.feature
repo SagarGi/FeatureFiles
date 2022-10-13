@@ -4,11 +4,13 @@ Feature:
     So that I can manage unwanted contact
 
 Background:
-	Given the user logged in with valid email address "<email>" and valid password "<password>"
+    Given I navigate to the login page
+    When I submit Email and password
+    And  Click on the "Login" button
+    Then I should be logged in 
+    Then Added Contact should be exists 
 
-    Scenario Outline: Delete specific contact list
-        Given the user enters following credentails are added
-            | name | email         | phone      | contact types|
-            | xyz  | xyz@gmail.com | 9875688990 | Personal     |
-        When the user delete the contact
+Scenario: Delete contacts
+    When  the user click "delete" botton 
+    Then  the contact should be deleted
 
