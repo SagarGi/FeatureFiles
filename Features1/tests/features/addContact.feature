@@ -7,8 +7,8 @@ Feature: Add Contact
 
         Scenario: Added contact with correct inputs
             When the user enters following inputs 
-            |name|email        |phone       |contactType |
-            |abc |abc@gmail.com|9800000000  |Personal    |
+                |name|email        |phone       |contactType |
+                |abc |abc@gmail.com|9800000000  |Personal    |
             And click "Add contact" button
             Then added contacts should be displayed
 
@@ -18,7 +18,7 @@ Feature: Add Contact
             And click "Add contact" button 
             Then error message "<message>" should pop
             Examples:
-            |name    |email     |phone       |contactType    |message                                |
-            |abc     |abc.com   |98000000    |Personal       |@ is missing                           |
-            |abccc   |hello@.com|980000000   |Professional   |. is used at a wrong position in a .com|
+                |name    |email     |phone       |contactType    |message                                |
+                |abc     |abc.com   |98000000    |Personal       |@ is missing                           |
+            |   abccc   |hello@.com|980000000   |Professional   |. is used at a wrong position in a .com|
         
