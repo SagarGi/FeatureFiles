@@ -1,4 +1,4 @@
-Feature:
+Feature: Add Contact
     As a user 
     I want to add contacts
     So that i can save my contacts
