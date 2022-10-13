@@ -5,8 +5,8 @@ Feature:AddContact
 
     Background: User is looged In
         Given the  user  navigated to the login page
-        And the user submit username and password
-        And  the user should be logged in to the homepage
+        And the user submits username and password
+        And  the user was logged in to the homepage
 
         Scenario:add to contacts with personal contact type
         When the user submit name with "name" and email with "valid email" and chooses the contact type as "personal"
