@@ -7,9 +7,12 @@ Feature: Add Contact
         Given user has been navigated to homepage
 
      Scenario Outline: User wants to add contacts with valid inputs
-        When user enters "<name>","<email>","<phone>" and checks "<contactType>"
-        And clicks "Add Contact" button  
-        Then user should see the added contacts
+        When user inputs the field with following credentials and click "Add Contact" button:
+        |name    |email    |phone     |contactType   |
+        |<name>  |<email>  |<phone>   |<contactType> |
+        Then user should see the following contacts:
+        |name    |email    |phone     |contactType   |
+        |<name>  |<email>  |<phone>   |<contactType> |
         Examples:
           |name    |email                |phone     |contactType  |
           |Susmita |susmita412@gmail.com |984635346 |Personal     |
@@ -18,8 +21,9 @@ Feature: Add Contact
           |Sita    |sita412@gmail.com    |          |Professional |    
 
      Scenario Outline: User wants to add contacts with invalid email pattern
-        When user enters "<name>","<email>","<phone>" and checks "<contactType>"
-        And clicks "Add Contact" button  
+        When user inputs the field with following credentials and click "Add Contact" button
+        |name    |email    |phone     |contactType   |
+        |<name>  |<email>  |<phone>   |<contactType> |  
         Then user should see the message "<error>"
         Examples:
           |name    |email                |phone     |contactType  |error                         |
@@ -29,9 +33,12 @@ Feature: Add Contact
           |Sita    |@gmail.com           |          |Professional |part before @ should be given |
 
      Scenario Outline: User wants to add contacts with invalid inputs
-        When user enters "<name>","<email>","<phone>" and checks "<contactType>"
-        And clicks "Add Contact" button  
-        Then contact should not be displayed 
+        When user inputs the field with following credentials and click "Add Contact" button
+        |name    |email    |phone     |contactType   |
+        |<name>  |<email>  |<phone>   |<contactType> |  
+        Then user should not see the following contacts:
+        |name    |email    |phone     |contactType   |
+        |<name>  |<email>  |<phone>   |<contactType> |  
         Examples:
           |name    |email                |phone     |contactType  |
           |        |susmita412gmail.com  |984635346 |Personal     |
