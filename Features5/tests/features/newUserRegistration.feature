@@ -14,8 +14,9 @@ Feature: Register
        Then user should see the homepage
 
     Scenario Outline: When new user registers with invalid inputs
-       When user enters "<name>","<email>","<password>" and "<confirmPassword>"
-       And clicks "Register" button
+       When register with foloowing invalid inputs and clicks "Register" button
+       |name  |email   |password   |confirmPassword|
+       |<name>|<email> |<password> |<confirmPassword>|
        Then user should see the message "<error>"
        Examples:
          |name        |email                 |password  |confirmPassword  |error                            |
