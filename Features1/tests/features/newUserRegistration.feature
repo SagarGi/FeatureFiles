@@ -3,11 +3,14 @@ Feature: New User Resistration
     I want to Register to the Contact Fox
     So that i can have the access of homepage
 
-    Background: Given the user has navigated to the register page
+    Background: 
+        Given the user has navigated to the register page
 
 
         Scenario: Register with valid Credentials
-            When the user enter "Name" ,valid "validEmailAddress", "validPassword" and confirm password as "validPassword" 
+            When the user enters following inputs
+                |name    |email             |password|confirm password|
+                |Samiksha|samiksha@gmail.com|hello123|hello123        |
             Then  the home page should be displayed on the webUI
     
 
