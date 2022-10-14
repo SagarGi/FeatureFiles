@@ -8,12 +8,12 @@ Feature: Register new user account
 
     Scenario: Register with all valid credentials
         When User registers new account entering name as "name", email as "valid email", password as "password", confirm password as "confirm-password"
-        Then new user account should be created
+        Then new user should navigate to Contact Fox page
 
 # register 1 account or more than 1 ???
     Scenario Outline: Register with all valid credentials
         When User registers new account entering name as "<name>", email as "<email>", password as "<password>", confirm password as "<confirm-password>"
-        Then new user account should be created
+        Then new user should navigate to Contact Fox page
         Examples:
         |name |    email    |password|confirm-password|
         |abc  |abc@gmail.com|abc12345|abc12345        |
@@ -27,17 +27,16 @@ Feature: Register new user account
         When User register new account with password as "password" and confirm password as "confirm-password"
         Then pop up should appear showing error message as "Passwords do not match" 
 
-# To check email only, is it necessary to give data in all the other input fields ??? 
     Scenario: Register with password less than six characters
         When User registers new account entering name as "<name>", email as "<email>", password as "<password>", confirm password as "<confirm-password>"
         Then validation error message as "Please lengthen this text to 6 characters or more." should pop up
         Examples:
-        |name |    email    |password|confirm-password|
-        |abc  |abc@gmail.com|a       |a               |
-        |abc  |abc@gmail.com|ab      |ab              |
-        |abc  |abc@gmail.com|abc     |abc             |
-        |abc  |abc@gmail.com|abc1    |abc1            |
-        |abc  |abc@gmail.com|abc12   |abc12           |
+            |    email    |
+            |abc@gmail.com|
+            |abc@gmail.com|
+            |abc@gmail.com|
+            |abc@gmail.com|
+            |abc@gmail.com|
 
     Scenario: Register with email same as of already created account
         Given account is already created with name "abc", email "abc@gmail.com", password "abc12345", confirm password "abc12345"
