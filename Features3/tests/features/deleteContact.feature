@@ -4,7 +4,7 @@ Feature: Delete a contact
     So that contact will be removed from contact list
 
     Background:
-        Given User is logged in and user is navigated to Contact Fox page
+        Given the User has logged in and navigated to Contact Fox page
 
     Scenario Outline: Delete all created contacts from contact list
         Given Contacts are added with name as "<name>", email as "<email>", phone as "<phone>" and  contact type as "<contact-type>"
