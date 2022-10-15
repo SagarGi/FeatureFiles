@@ -1,6 +1,6 @@
 Feature: Delete a contact
     As a user 
-    I want to delete a contact 
+    I want to delete contact 
     So that contact will be removed from contact list
 
     Background:
@@ -9,7 +9,8 @@ Feature: Delete a contact
     Scenario Outline: Delete all created contacts from contact list
         Given Contacts are added with name as "<name>", email as "<email>", phone as "<phone>" and  contact type as "<contact-type>"
         When User deletes a contact with name "<name>", email "<email>", phone "<phone>" and contact type "<contact-type>"
-        Then that contact with name "<name>", email "<emai>", phone "<phone>" and contact type "<contact-type>" should be removed from contact list and contact list should be decremented by 1
+        Then that contact with name "<name>", email "<emai>", phone "<phone>" and contact type "<contact-type>" should be removed from contact list 
+        And contact list should be decremented by 1
         Examples:
             |name|email        |phone     |contact-type|
             |xyz |xyz@gmail.com|9876543210|personal    |
