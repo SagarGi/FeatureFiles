@@ -1,11 +1,11 @@
 Feature: Search contact
     As a user
     I want to search contact by contact name
-    So that only that contact is displayed in contact list
+    So that only searched contact is displayed in contact list
 
     Background:
-        Given User is logged in and navigated to Contact Fox page
-        And the following contact exists 
+        Given the User has logged in and navigated to Contact Fox page
+        And the following contacts has been created 
             |name|email        |phone     |contact-type|
             |abc |abc@gmail.com|9898989898|personal    |
             |xyz |xyz@gmail.com|9876543210|personal    | 
