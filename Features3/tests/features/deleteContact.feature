@@ -9,7 +9,7 @@ Feature: Delete a contact
     Scenario Outline: Delete all created contacts from contact list
         Given Contacts has been added with name as "<name>", email as "<email>", phone as "<phone>" and  contact type as "<contact-type>"
         When User deletes a contact with email "<email>"
-        Then that contact with email "<emai>" should be removed from contact list 
+        Then that contact with email "<email>" should be removed from contact list 
         Examples:
             |name|email        |phone     |contact-type|
             |xyz |xyz@gmail.com|9876543210|personal    |
