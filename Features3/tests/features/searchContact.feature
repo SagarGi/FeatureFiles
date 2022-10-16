@@ -22,6 +22,16 @@ Feature: Search contact
             |Ram |
             |Hari|
 
+    Scenario Outline: Search contact by email
+        When User search contact with contact email "<email>"
+        Then contact with email "<email>" should only be displayed in contact list
+        Examples:
+            |email        |
+            |abc@gmail.com|
+            |xyz@gmail.com|
+            |ram@gmail.com|
+            |hari@yahoo.com|
+
     Scenario Outline: Search contact with string input
         When User search contact with string input "<inputData>"
         Then contacts which contains "<inputData>" in contact name or in email should be displayed in contact list
@@ -31,4 +41,3 @@ Feature: Search contact
             |y        |
             |ram      |
             |b        |
-
