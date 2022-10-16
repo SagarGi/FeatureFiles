@@ -21,5 +21,5 @@ Feature: Delete a contact
             |abc |abc@gmail.com|9898989898|personal    |
             |xyz |xyz@gmail.com|9876543210|personal    |
         When User deletes a contact with email "abc@gmail.com"
-        Then User with email "abc@gmail.com" should be deleted
+        Then that contact with email "abc@gmail.com" should be removed from contact list
         But another contact with email "xyz@gmail.com" should be displayed in contact list
