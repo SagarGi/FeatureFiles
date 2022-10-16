@@ -10,20 +10,16 @@ Feature: Delete a contact
         Given Contacts has been added with name as "<name>", email as "<email>", phone as "<phone>" and  contact type as "<contact-type>"
         When User deletes a contact with email "<email>"
         Then that contact with email "<emai>" should be removed from contact list 
-        And contact list should be decremented by 1
         Examples:
             |name|email        |phone     |contact-type|
             |xyz |xyz@gmail.com|9876543210|personal    |
             |Ram |ram@gmail.com|9801234567|professional|
 
-    Scenario Outline: Delete specific contact from contact list
+    Scenario: Delete specific contact from contact list
         Given Contacts with following details has been added
             |name|email        |phone     |contact-type|
             |abc |abc@gmail.com|9898989898|personal    |
             |xyz |xyz@gmail.com|9876543210|personal    |
-        When User deletes a contact with email "<email>"
-        Then User with email "<email>" should be deleted
-        But other contact with email "xyz@gmail.com" should be displayed in contact list
-        Examples:
-            |email        |
-            |abc@gmail.com|
+        When User deletes a contact with email "abc@gmail.com"
+        Then User with email "abc@gmail.com" should be deleted
+        But another contact with email "xyz@gmail.com" should be displayed in contact list
