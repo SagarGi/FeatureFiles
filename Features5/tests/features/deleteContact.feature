@@ -1,7 +1,7 @@
 Feature: Delete Contact
      As a user
      I want to delete contact
-     So that I can free up the space
+     So that I can remove unwanted contact from the list
 
    Background:
          Given user has navigated to  homepage
