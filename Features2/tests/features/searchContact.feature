@@ -15,7 +15,7 @@ Feature:Search contact
         | mnbv | mnvb@gmail.com | 098876677 | Professional |
 
      Scenario:Search contact by email
-        When the user enters the letter of email in the search icon
+        When the user enters the letter of email  with "email"in the search icon
         Then  it shows all the contacts started from the entered email
 
 
