@@ -13,7 +13,8 @@ Feature:Edit Contact
         | abcd1    | sabhdb@gmail.com   | 9876666    | Personal     |
         | cvbn     | cvbn@gmail.com     | 090099090  | Professional |
         | mnbv     | mnvb@gmail.com     | 098876677  | Professional |
-     #scenario created   
+     #scenario created  
+ 
     Scenario:Edit the saved contact
      When the  user clicks the Edit button of contact with name "abcde"
      And  the user  edit contact dashboard opens with info of contact "abcde"
