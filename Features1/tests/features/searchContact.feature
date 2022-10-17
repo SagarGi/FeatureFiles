@@ -33,8 +33,4 @@ Feature: Search Contacts
     #     When the user enters following email in the search input
     #         |email             |
     #         |samiksa@gmail.com |
-    #     Then the contact search list should be empty     
-            
-            
-
-
+    #     Then the contact search list should be empty
