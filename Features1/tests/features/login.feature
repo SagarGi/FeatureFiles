@@ -28,5 +28,3 @@ Scenario Outline: Login with invalid email format
         |abc.com     |abc     |@ is missing                              |
         |abc@.com    |hello   |. is used at a wrong position in a .com   |
         |abc@gmail   |hyyy    |                                          |
-
-Scenario
