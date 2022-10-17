@@ -4,22 +4,34 @@ Feature: Edit contact
     So that edited contact is updated and displayed in contact list
 
     Background:
-        Given the User has logged in and navigated to Contact Fox page 
+        Given the user has logged in and navigated to Contact Fox page 
 
-    Scenario: Edit a user's data
+    Scenario: Edit a user's new data
         Given a contact has been created with following details
             |name|email        |phone     |contact-type|
             |abc |abc@gmail.com|9898989898|personal    |
-        When User edits data 
+        And selects contact with email "abc@gmail.com" to edit
+        When user edits contact with new data 
+            |name   |   email        |phone     |contact-type|
+            |abcdef |abcdef@gmail.com|9898989898|personal    |
+        Then contact with email "abcdef@gmail.com" should be updated with new data as 
+            |name   |   email           |phone     |contact-type|
+            |abcdef |abcdef@gmail.com      |9898989898|personal    |
 
-
-    
-        And the following contact exists 
+    Scenario: Edit a specific contact from contact list
+        Given contacts have been added with following credentials
             |name|email        |phone     |contact-type|
             |abc |abc@gmail.com|9898989898|personal    |
-            |xyz |xyz@gmail.com|9876543210|personal    |
-        And clicks Edit button, data is fetched in Edit contact form
-
+            |def |def@gmail.com|9797979797|personal    |
+            |ijk |ijk@gmail.com|9876543210|professional|
+            |xyz |xyz@gmail.com|9801234567|professional|
+        And the user selects contact with email "ijk@gmail.com" to edit
+        When user edits contact with new data 
+            |name   |   email        |phone     |contact-type|
+            |abcdef |abcdef@gmail.com|9898989898|personal    |
+        Then contact with email "abcdef@gmail.com" should be updated with new data as 
+            |name   |   email        |phone     |contact-type|
+            |abcdef |abcdef@gmail.com|9898989898|personal    |
 
     # Scenario: Edit name only
     #     When User edits name as "John Doe" and updates contact
