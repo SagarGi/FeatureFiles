@@ -6,7 +6,7 @@ Feature:User registration
     Background:The user is in Registration page 
         Given a user has navigated to the loginpage
         And the user has clicked Register button
-        And the user has been navigated to the  Registration page
+        And the user has been navigated to the Registration page
 
 
         Scenario:To register account with valid email and  same password and confirm password
