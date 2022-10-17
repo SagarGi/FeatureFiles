@@ -6,9 +6,10 @@ Feature: Edit Contacts
     Background:
         Given a user is navigated to the contact page 
         And has following contact list 
-            |name|email        |phone   |contact-type|
-            |abc |abc@gmail.com|98000000|Personal    |
-            |aaa |aaa@gmail.com|98111111|Professional|
+            |Name    |Email              |Phone    |Contact Type|
+            |Samiksha|Samiksha@gmail.com |9846000  |Personal    |
+            |Binita  |Binita@gmail.com   |984600110|Personal    |
+            |Anusha  |Anusha@gmail.com   |9846000  |Personal    |
         And clicks on the "Edit" button , data is displayed on the edit contact form
         
 
