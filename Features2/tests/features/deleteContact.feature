@@ -1,10 +1,12 @@
 Feature:Delete Contact
     As a user
     I want to delete contact
-    So I can unwanted contacts from the contacts saved
+    So I can  remove unwanted contacts from the contacts saved
+    Background:
+        Given the user has navigated to homepage
 
      Scenario Outline:To delete the contacts from the saved contacts
-        Given the user has added following contacts
+        Given  the user has added following contacts
         | name | Email | Phone | Contact Type |
         | <name> |<Email>| <Phone>| <Contact  Type>|
         When the user deletes the contact name with "<email>"
@@ -14,14 +16,12 @@ Feature:Delete Contact
         | example |example@gmail.com | 22222222222| Professional |
         | example2 | example2@gmail.com |3333333333|personal|
 
-    Scenario Outline:To delete the specific contacts from the saved contacts
+    Scenario:To delete the specific contacts from the saved contacts
         Given the user has added following contacts
         | name | Email | Phone | Contact Type |
         | example |example@gmail.com | 22222222222| Professional |
         | example2 | example2@gmail.com |3333333333|personal|
-        When the user deletes the contact name with "<email>"
-        Then the contact with  name "<email>" will be deleted
+        When the user deletes the contact name with "example@gmail.com"
+        Then the contact with  name "example@gmail.com" will be deleted
         But the coontact with email "example2@gmail.com" will be displayed
-        Examples:
-        |email|
-        |example@gmail.com|                                       
+                                           
