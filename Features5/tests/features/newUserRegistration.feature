@@ -13,8 +13,8 @@ Feature: Register
        And clicks "Register" button
        Then user should see the homepage
 
-    Scenario Outline: When new user registers with invalid inputs
-       When register with foloowing invalid inputs and clicks "Register" button
+    Scenario Outline: New user registers with invalid inputs
+       When the user registers with the following invalid inputs:
        |name  |email   |password   |confirmPassword|
        |<name>|<email> |<password> |<confirmPassword>|
        Then user should see the message "<error>"
