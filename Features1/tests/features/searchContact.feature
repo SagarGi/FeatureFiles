@@ -14,20 +14,26 @@ Feature: Search Contacts
     
     Scenario: User search contacts with email address
         When the user enters following email in the search input
-            |email             |
-            |samiksha@gmail.com|
+            |Email             |
+            |Samiksha@gmail.com|
         Then the contact with email "samiksha@gmail.com" should be displayed in the contact list
+
+    Scenario: User search contacts with name
+        When the user enters following email in the search input
+            |Name    |
+            |Samiksha|
+        Then the contact with name "Samiksha" should be displayed in the contact list    
             
 
-    Scenario: User search contacts with phone
-        When the user enters phone number as "9800000"
-        Then contact search list should be empty
+    # Scenario: User search contacts with phone
+    #     When the user enters phone number as "9800000"
+    #     Then contact search list should be empty
 
-    Scenario: User search for contact that is not added in the contact list
-        When the user enters following email in the search input
-            |email             |
-            |samiksa@gmail.com |
-        Then the contact search list should be empty     
+    # Scenario: User search for contact that is not added in the contact list
+    #     When the user enters following email in the search input
+    #         |email             |
+    #         |samiksa@gmail.com |
+    #     Then the contact search list should be empty     
             
             
 
