@@ -6,7 +6,7 @@ Feature:Search contact
     
     Background:
     Given the user has navigated to the homepage
-     And the user has added following contacts
+    And the user has added following contacts
         | name     | Email              | Phone      | Contact Type |
         | abcde    | abcde@gmail.com    | 00000000   | Professional |
         | xyz      | xyz@gmail.com      | 111111111  | Personal     |
@@ -18,12 +18,12 @@ Feature:Search contact
  
      Scenario:Search contact by email
         When the user enters "abcde@gmail.com" in the search icon
-        Then  it shows all the contacts started from the entered "abcde@gmail.com"
+        Then  it should display all the contacts with data "abcde@gmail.com"
 
     Scenario:Search contact by number
         When the user enters "00000000" in the search icon
-        Then  it shows all the contacts started from the entered "00000000"
+        Then  it should display all the contacts with data "00000000"
       
     Scenario:Search with name
         When the user enters "mnbv" in the search icon
-        Then  it shows all the contacts started from the entered "mnbv"
+        Then  it should display all the contacts with data "mnbv"
