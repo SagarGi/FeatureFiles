@@ -10,7 +10,7 @@ Feature: Add Contact
         When user adds the following contact:
            |name    |email    |phone     |contactType   |
            |<name>  |<email>  |<phone>   |<contactType> |
-        Then user should see the following contactsin the contact list:
+        Then user should see the following contacts in the contact list:
            |name    |email    |phone     |contactType   |
            |<name>  |<email>  |<phone>   |<contactType> |
         Examples:
