@@ -14,20 +14,20 @@ Feature:Delete Contact
                 |Binita  |Binita@gmail.com   |984600110|Personal    |
                 |Anusha  |Anusha@gmail.com   |9846000  |Personal    |
         When the user deletes following contact with email
-            |email             |
-            |samiksha@gmail.com|
+            |Email             |
+            |Samiksha@gmail.com|
         Then the user with email "samiksha@gmail.com" should not be in contact list anymore
         But the user with following email should be in the contact list
-            |email           |
+            |Email           |
             |Binita@gmail.com|
             |Anusha@gmail.com|
 
     Scenario: Create and delete user from contact list
         Given the following user has been added to the contact list
-            |name    |email             |contact-type|
-            |samiksha|samiksha@gmail.com|Personal    |
+            |Name    |Email             |Phone  |Contact Type|
+            |Amiksha |Aamiksha@gmail.com |9846000|Personal    |
         When the user deletes following contact with email
-            |email             |
-            |samiksha@gmail.com|
-        Then the user with email "samiksha@gmail.com" should not be in contact list anymore
+            |Email             |
+            |Aamiksha@gmail.com|
+        Then the user with email "Aamiksha@gmail.com" should not be in contact list anymore
     
