@@ -19,11 +19,11 @@ Feature:Edit Contact
  
     Scenario:Edit the saved contact
      When the  user clicks the Edit button of contact with name "abcde"
-     And  the user changes the required info of  name "abcde" is edited  as 
+     And  the user changes the required info of contact with name "abcde" as
         | name     | Email              | Phone      | Contact Type |
         | abcde    | edited@gmail.com   | 6666666666 | Personal     |
      And  the user clicks the update contact button
-     Then the  contact details will be edited of the contact "abcde" and the contact details will be shown as
+     Then the new contact details will be shown as
         | name     | Email              | Phone      | Contact Type |
         | abcde    | abcde@gmail.com    | 00000000   | Professional |
         | xyz      | xyz@gmail.com      | 111111111  | Personal     |
@@ -36,7 +36,7 @@ Feature:Edit Contact
      Scenario:Edit name of the saved contact
      When the user clicks the Edit button of contact with email "xyz@gmail.com"
      And the user changes the name as the "some" 
-     Then the  contact details will be edited of the contact "xyz@gmail.com" and the contact details will be shown as
+     Then the new contact details will be shown as
         | name     | Email              | Phone      | Contact Type |
         | abcde    | abcde@gmail.com    | 00000000   | Professional |
         | some     | xyz@gmail.com      | 111111111  | Personal     |
