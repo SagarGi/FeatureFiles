@@ -21,7 +21,7 @@ Feature:Edit Contact
      When the  user clicks the Edit button of contact with name "abcde"
      And  the user changes the required info of  name "abcde" is edited  as 
         | name     | Email              | Phone      | Contact Type |
-        | abcde   | edited@gmail.com   | 6666666666 | Personal     |
+        | abcde    | edited@gmail.com   | 6666666666 | Personal     |
      And  the user clicks the update contact button
      Then the  contact details will be edited of the contact "abcde" and the contact details will be shown as
         | name     | Email              | Phone      | Contact Type |
