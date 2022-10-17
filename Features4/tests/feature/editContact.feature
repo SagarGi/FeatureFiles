@@ -28,7 +28,7 @@ Scenario: Add single user and edit its data
         |name     |email               |phone       |contact-type  |
         |deekshya |deekshyap@gmail.com |9567989999  | personal     |
     
-    When the user makes the following updates with email "deekshyap@gmail.com" :
+    When the user makes the following updates with email "deekshyap@gmail.com" as :
         | Name     | Email                 | Phone     | Contact Type    |
         | deekshya | deekshyppp@gmail.com  | 956798999 | personal    |
     Then the updated contact with email "deekshyap@gmail.com" in the contact list should be:
