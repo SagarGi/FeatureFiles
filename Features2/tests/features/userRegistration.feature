@@ -15,13 +15,13 @@ Feature:User registration
 
         Scenario Outline:when you input invalid email while registration
             When the user enters with a "<email>"
-            Then the user will thrown a "<message>"
+            Then the user will be given a "<message>"
             Examples:
-            | email            | message|
-            | abchefg98gmailcom |  Please enter an email address|
-            | rits98.com       | Please enter an email address|
-            | rira@gmail       |                              |
-            | risahgdgajda36gmail.com | Please enter an email address|
+            | email                   | message|
+            | abchefg98gmailcom       |  Please enter an email address|
+            | rits98.com              | Please enter an email address |
+            | rira@gmail              |                               |
+            | risahgdgajda36gmail.com | Please enter an email address |
         
         Scenario:when you give different  password and confirm password
             When the user enters different Password with "<password>" and Confirm Password  with "<confirm password>"
