@@ -17,14 +17,13 @@ Feature:Search contact
         | mnbv     | mnvb@gmail.com     | 098876677  | Professional |
  
      Scenario:Search contact by email
-        When the user enters the letter of email  with "abcde@gmail.com" in the search icon
+        When the user enters "abcde@gmail.com" in the search icon
         Then  it shows all the contacts started from the entered "abcde@gmail.com"
 
     Scenario:Search contact by number
-         When the user enters the  "111111111" in the search icon 
-         Then all the contact information in which Phone starts with the given  "111111111" will shown
-      
+        When the user enters "00000000" in the search icon
+        Then  it shows all the contacts started from the entered "00000000"
       
     Scenario:Search with name
-         When the user enters the "mnbv" 
-         Then all the contact information with name  "mnbv"  will shown 
+        When the user enters "mnbv" in the search icon
+        Then  it shows all the contacts started from the entered "mnbv"
