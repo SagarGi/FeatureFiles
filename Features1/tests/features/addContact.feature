@@ -10,15 +10,14 @@ Feature: Add Contact
             When the user enters following inputs 
                 |name|email        |phone       |contactType |
                 |abc |abc@gmail.com|9800000000  |Personal    |
-            And clicks "Add contact" button
             Then following contacts should be displayed
                 |name|email        |phone       |contactType |
                 |abc |abc@gmail.com|9800000000  |Personal    |   
 
-
         Scenario Outline: Added contact with invalid email pattern
-            When the user enters "<name>" , invalid email "<email>" , phone "<phone>" , and contactType "<contactType>" 
-            And click "Add contact" button 
+            When the user enters following inputs
+                |name  |email  |phone  |contactType  |
+                |<name>|<email>|<phone>|<contactType>|      
             Then error message "<message>" should pop
             Examples:
                 |name    |email     |phone       |contactType    |message                                |
