@@ -6,7 +6,7 @@ Feature: Delete Contact
    Background:
          Given user has navigated to  homepage
     
-   Scenario Outline: User wants to delete specific contact
+   Scenario Outline: User deletes specific contact
         Given the following users have been added to the contact list:
            |name    |email                |phone     |contactType  |
            |Susmita |susmita412@gmail.com |984635346 |Personal     |
