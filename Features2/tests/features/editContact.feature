@@ -35,7 +35,7 @@ Feature:Edit Contact
      
      Scenario:Edit name of the saved contact
      When the user clicks the Edit button of contact with email "xyz@gmail.com"
-     And the user chnages the name as the  "some" 
+     And the user changes the name as the "some" 
      Then the  contact details will be edited of the contact "xyz@gmail.com" and the contact details will be shown as
         | name     | Email              | Phone      | Contact Type |
         | abcde    | abcde@gmail.com    | 00000000   | Professional |
