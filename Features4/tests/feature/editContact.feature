@@ -21,7 +21,7 @@ Scenario:Edit specific contact information
         | deekshya | deekshyppp@gmail.com  |       | professional    |
     Then the contact with the email "deekshyap@gmail.com" should be updated
         | Name     | Email                  | Phone      | Contact Type |
-        | deekshya | deekshyappp@gmail.com  | 956798999  | Personal     | 
+        | deekshya | deekshyppp@gmail.com  | 956798999  | Personal     | 
 
 Scenario: Add single user and edit its data
   Given the following contacts have been created 
@@ -32,6 +32,6 @@ Scenario: Add single user and edit its data
         | Name     | Email                 | Phone     | Contact Type    |
         | deekshya | deekshyppp@gmail.com  | 956798999 | personal    |
     Then the updated contact with email "deekshyap@gmail.com" in the contact list should be:
-        |name    |email              |phone     |contactType |
-        |deekshya|deeshyap@gmail.com |956798999 |personal    |
+        |name    | email               |phone       |contactType |
+        |deekshya|deekshyppp@gmail.com |956798999 |personal    |
 
