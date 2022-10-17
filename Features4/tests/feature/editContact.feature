@@ -27,10 +27,11 @@ Scenario: Add single user and edit its data
   Given the following contacts have been created 
         |name     |email               |phone       |contact-type  |
         |deekshya |deekshyap@gmail.com |9567989999  | personal     |
-    When user updates the contact with email "deekshyap@gmail.com" with following data:
-        |phone     |contactType   |
-        |985777654 |Professional  |
-    Then the updated contact with email "helllpp@gmail.com" in the contact list should be:
-        |name  |email             |phone     |contactType   |
-        |hello |helllpp@gmail.com |985777654 |Professional  |
+    
+    When the user makes the following updates with email "deekshyap@gmail.com" :
+        | Name     | Email                 | Phone     | Contact Type    |
+        | deekshya | deekshyppp@gmail.com  | 956798999 | personal    |
+    Then the updated contact with email "deekshyap@gmail.com" in the contact list should be:
+        |name    |email              |phone     |contactType |
+        |deekshya|deeshyap@gmail.com |956798999 |personal    |
 
