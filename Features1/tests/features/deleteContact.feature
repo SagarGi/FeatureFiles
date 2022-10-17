@@ -6,13 +6,12 @@ Feature:Delete Contact
     Background:
         Given the user has navigated to the contact page
 
-
     Scenario: Delete specific user from contact list
         Given the following contacts have been added to the contact list
-                |Name    |Email              |Phone    |Contact Type|
-                |Samiksha|Samiksha@gmail.com |9846000  |Personal    |
-                |Binita  |Binita@gmail.com   |984600110|Personal    |
-                |Anusha  |Anusha@gmail.com   |9846000  |Personal    |
+            |Name    |Email              |Phone    |Contact Type|
+            |Samiksha|Samiksha@gmail.com |9846000  |Personal    |
+            |Binita  |Binita@gmail.com   |984600110|Personal    |
+            |Anusha  |Anusha@gmail.com   |9846000  |Personal    |
         When the user deletes following contact with email
             |Email             |
             |Samiksha@gmail.com|
