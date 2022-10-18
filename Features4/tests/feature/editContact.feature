@@ -26,7 +26,7 @@ Scenario: Add single user and edit its data
     Given the following contacts have been created 
         | name     | email               | phone       | contact-type  |
         | deekshya | deekshyap@gmail.com | 956798999   | personal      |
-   When the user edits the contact with email "deekshyap@gmail.com" as:
+    When the user edits the contact with email "deekshyap@gmail.com" as:
         | Name        | Email                 | Contact Type   |
         | deekshyappp | deekshyppp@gmail.com  | personal       |
     Then the updated contact with email "deekshyappp@gmail.com" should be updated as:
