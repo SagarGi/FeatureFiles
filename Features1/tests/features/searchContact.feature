@@ -13,13 +13,13 @@ Feature: Search Contacts
 
     
     Scenario: User search contacts with email address
-        When the user enters following email in the search input
+        When the user enters following data in the search input
             |Email             |
             |Samiksha@gmail.com|
         Then the contact with email "samiksha@gmail.com" should be displayed in the contact list
 
     Scenario: User search contacts with name
-        When the user enters following email in the search input
+        When the user enters following data in the search input
             |Name    |
             |Samiksha|
         Then the contact with name "Samiksha" should be displayed in the contact list    
