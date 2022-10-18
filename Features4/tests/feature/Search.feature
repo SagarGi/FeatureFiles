@@ -4,7 +4,7 @@ Feature: Search contact
     So that only searched contact is displayed in contact list
 
     Background:
-        Given the User has logged in with the valid email "deekshyap@gmail.com" and password "123456"
+        Given the user has logged in with the valid email "deekshyap@gmail.com" and password "123456"
         And  navigated to Contact Fox page
         And the following contacts has been created 
             |name     |email               |phone       |contact-type  |
@@ -14,15 +14,15 @@ Feature: Search contact
             |shyam    |shyam@gmail.com     |6788999999  | professional |
 
     Scenario Outline: Search contact with contact name
-        When User search contact with contact name "<name>"
+        When user search contact with contact name "<name>"
         Then contact with name "<name>" should only be displayed in contact list
         Examples:
-            |name     |
-            |deekshya |
-            |laxmi    |
+            | name     |
+            | deekshya |
+            | laxmi    |
         
     Scenario Outline: Search contact with  alphabet of contact
-        When User search contact with alphabet "<alphabet>"
+        When user search contact with alphabet "<alphabet>"
         Then contacts which contains "<alphabet>" should only be displayed in contact list
         Examples:
            | alphabet |
@@ -30,9 +30,9 @@ Feature: Search contact
            | l        |
 
     Scenario Outline: Search contact with contact email
-        When User search contact with contact name "<email>"
+        When user search contact with contact name "<email>"
         Then contact with email "<email>" should only be displayed in contact list
         Examples:
-            |email               |
-            |deekshyap@gmail.com |
-            |laxmi@gmail.com     |
+            | email               |
+            | deekshyap@gmail.com |
+            | laxmi@gmail.com     |
