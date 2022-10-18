@@ -13,7 +13,7 @@ Feature:Delete Contact
             | name   | Email | Phone  | Contact Type   |
             | <name> |<Email>| <Phone>| <Contact  Type>|
         When the user deletes the contact name with "<email>"
-        Then the contact with name with "<email>"  will be deleted
+        Then the contact with name with "<email>" should be deleted
         Examples:
             | name     | Email              | Phone      | Contact Type |
             | example  |example@gmail.com   | 22222222222| Professional |
