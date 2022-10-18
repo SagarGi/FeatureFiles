@@ -7,7 +7,7 @@ Feature: Add Contact
         Given the user have navigated to the homepage  
 
         Scenario: Added contact with correct inputs
-            When the user enters following inputs 
+            When the user enters following contact information
                 |name|email        |phone       |contactType |
                 |abc |abc@gmail.com|9800000000  |Personal    |
             Then following contacts should be displayed
@@ -18,7 +18,7 @@ Feature: Add Contact
             When the user enters following inputs
                 |name  |email  |phone  |contactType  |
                 |<name>|<email>|<phone>|<contactType>|      
-            Then error message "<message>" should pop
+            Then error message "<message>" should pop up on the webUI
             Examples:
                 |name    |email     |phone       |contactType    |message                                |
                 |abc     |abc.com   |98000000    |Personal       |@ is missing                           |
