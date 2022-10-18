@@ -18,7 +18,7 @@ Scenario:Edit specific contact information
     Then the contact with the email "deekshyap@gmail.com" should be updated as:
         | Name     | Email                 | Phone | Contact Type    |
         | deekshya | deekshyppp@gmail.com  |       | professional    |
-    Then the contact with the email "deekshyap@gmail.com" should be updated
+    Then the contact with the email "deekshyap@gmail.com" should be updated as:
         | Name     | Email                 | Phone      | Contact Type |
         | deekshya | deekshyppp@gmail.com  | 956798999  | Personal     | 
 
