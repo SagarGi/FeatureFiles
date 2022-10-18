@@ -18,3 +18,10 @@ Feature: Search contact
     Scenario: User searches contact by email
        When user searches the contact with email "email"
        Then only the contacts with email "email" should be displayed in the contact list
+
+    Scenario: User searches contact by a letter
+       When user searches the contact with letter "s"
+       Then only the following contacts should be displayed in the contact list:   
+            |name    |email                |phone     |contactType   |
+            |Susmita |susmita412@gmail.com |984635346 |Personal      |  
+            |Sita    |sita412@gmail.com    |984635346 |Personal      |
