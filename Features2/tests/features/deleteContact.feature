@@ -13,7 +13,7 @@ Feature:Delete Contact
             | name   | Email | Phone  | Contact Type   |
             | <name> |<Email>| <Phone>| <Contact  Type>|
         When the user deletes the contact name with "<email>"
-        Then the contact with  name with "<email>"  will be deleted
+        Then the contact with name with "<email>"  will be deleted
         Examples:
             | name     | Email              | Phone      | Contact Type |
             | example  |example@gmail.com   | 22222222222| Professional |
@@ -25,6 +25,6 @@ Feature:Delete Contact
             | example |example@gmail.com    | 22222222222| Professional |
             | example2| example2@gmail.com  |3333333333  |personal      |
         When the user deletes the contact name with "example@gmail.com"
-        Then the contact with  name "example@gmail.com" should be deleted
+        Then the contact with name "example@gmail.com" should be deleted
         But the coontact with email "example2@gmail.com" should be displayed
                                            
