@@ -1,7 +1,7 @@
 Feature:
     As a user
     I want to login to the Contact Fox
-    So that i can access to the home page
+    So that I can access to the home page
 
 Background: 
     Given the user has navigated to the login page
