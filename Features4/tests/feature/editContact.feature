@@ -15,19 +15,20 @@ Scenario:Edit specific contact information
         |laxmi    |laxmi@gmail.com     |9689999978  | personal     | 
         |dipesh   |dipesh@gmail.com    |4678990000  | professional |
         |shyam    |shyam@gmail.com     |6788999999  | professional |
-    Then the contact with the email "deekshyap@gmail.com" should be updated as:
-        | Name     | Email                 | Phone | Contact Type    |
-        | deekshya | deekshyppp@gmail.com  |       | professional    |
-    Then the contact with the email "deekshyap@gmail.com" should be updated as:
-        | Name     | Email                 | Phone      | Contact Type |
-        | deekshya | deekshyppp@gmail.com  | 956798999  | Personal     | 
+    When the user edits the contact with email "deekshyap@gmail.com" as:
+        | Name        | Email                 | Contact Type   |
+        | deekshyappp | deekshyppp@gmail.com  | personal       |
+    Then the contact with the email "deekshyppp@gmail.com" should be updated as:
+        | Name        | Email                 | Phone      | Contact Type |
+        | deekshyappp | deekshyppp@gmail.com  | 956798999  | personal     | 
 
 Scenario: Add single user and edit its data
     Given the following contacts have been created 
-        |name     |email               |phone       |contact-type  |
-    When the user makes the following updates with email "deekshyap@gmail.com" as 
-        | Name     | Email                 | Phone     | Contact Type    |
-        | deekshya | deekshyppp@gmail.com  | 956798999 | personal    |
-    Then the updated contact with email "deekshyap@gmail.com" in the contact list should be:
-        |name    | email               |phone       |contactType |
-        |deekshya|deekshyppp@gmail.com |956798999   |personal    |
+        | name     | email               | phone       | contact-type  |
+        | deekshya | deekshyap@gmail.com | 956798999   | personal      |
+   When the user edits the contact with email "deekshyap@gmail.com" as:
+        | Name        | Email                 | Contact Type   |
+        | deekshyappp | deekshyppp@gmail.com  | personal       |
+    Then the updated contact with email "deekshyappp@gmail.com" should be updated as:
+        |name       | email                |phone       |contactType |
+        |deekshyappp| deekshyppp@gmail.com |956798999   |personal    |
