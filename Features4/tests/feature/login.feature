@@ -19,3 +19,9 @@ Scenario Outline: Login with invalid email format
         | invalid email | password     | message                                  |
         | abc.com       | abc547746    | @ is missing                             |
         | abc@.com      | hello56477   | . is used at a wrong position in a .com  |
+Scenario Outline:Login with wrong password and wrong email address
+        When the user enters wrong password "<password>" and wrong email address "<email address>" 
+        Then the error message "<message>" should be popup
+    Examples:
+        | password     | message             | email address |
+        | abc          | invalid credentails | deekosh@gmail.c |
