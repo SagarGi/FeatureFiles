@@ -15,7 +15,7 @@ Scenario Outline: Add Contact
         | Hari | hari@gmail.com  | 9477859959  | Personal     |
         | Ram  | ram@gmail.com   | 9883738388  | Professional |
 
-Scenario Outline: User added invalid email format
+Scenario Outline: User added incorrect email format
     When the user enters name as "<Name>", email as "<email>", phone as "<Phone>" and  Contact type as "<Contact Type>"
     Then the popup message "<Message>" should be seen
     Examples:
