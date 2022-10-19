@@ -5,7 +5,7 @@ Feature:
 
 Scenario: Login with valid credential
     Given the user has navigated to the login page
-    When  the user enters valid "validemail" and "validpassword"
+    When  the user enters valid "samikshapaudel111@gmail.com" and "Hello123"
     Then  the home page should be displayed on the webUI
 
 Scenario: Login with invalid credential
