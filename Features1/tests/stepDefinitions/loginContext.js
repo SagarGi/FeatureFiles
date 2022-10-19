@@ -5,6 +5,7 @@ const emailSelector = 'input[name="email"]';
 const passwordSelector = 'input[name="password"]';
 const LoginSelector = 'input[type="submit"]';
 const logoutSelector = 'span[class="hide-sm"]';
+const popupSelector = 'div[class="alert alert-danger"]';
 
 Given("the user has navigated to the login page", async function () {
   console.log("The user has navigated to the login page");
@@ -13,7 +14,7 @@ Given("the user has navigated to the login page", async function () {
 });
 
 When(
-  "the user enters valid {string} and {string}",
+  "the user enters {string} and {string}",
   async function (validemail, validpassword) {
     await page.type(emailSelector, validemail);
     await page.type(passwordSelector, validpassword);
@@ -27,3 +28,12 @@ Then("the home page should be displayed on the webUI", async function () {
   console.log("The user is navigated to the home page");
   await page.pause();
 });
+
+Then(
+  "the {string} message should be pop in the login page",
+  async function (error) {
+    const popupLocator = page.locator(popupSelector);
+    await expect(popupLocator).toBeVisible();
+    await page.pause();
+  }
+);
