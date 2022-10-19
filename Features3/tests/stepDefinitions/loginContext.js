@@ -6,6 +6,7 @@ Given("the user has browsed to login page", async function () {
   await page.goto("http://localhost:3000/");
   // await page.pause();
 });
+
 When(
   "user enters correct credentials with email {string} and password {string}",
   async function (email, password) {
