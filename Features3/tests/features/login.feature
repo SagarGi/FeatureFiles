@@ -5,7 +5,7 @@ Feature:
 
     Scenario: Login with valid credential
         Given the user has browsed to login page
-        When user enters correct credentials with email "valid email" and name "valid name"
+        When user enters correct credentials with email "abc@gmail.com" and password "abc12345"
         Then user should be navigated to Contact Fox page
 
     Scenario: Login with invalid credential
