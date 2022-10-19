@@ -33,21 +33,3 @@ Then("the user will be naviaged to the homepage", async function () {
   console.log("The user entered to the Homepage");
   await page.pause();
 });
-
-// When(
-//   "the user enters the invalid credentials with email {string} and Password {string}",
-//   async function (email, password) {
-//     // Write code here that turns the phrase above into concrete actions
-//     await page.type(emailSelector, email);
-//     await page.type(passwordSelector, password);
-//     await page.click(loginSelector);
-//   }
-// );
-
-// Then('the user should be given invalid credentials {string}',async function (message) {
-//   // Write code here that turns the phrase above into concrete actions
-//   const messageLocator = page.locator(messageLocator);
-//   await expect(logoutLocator).toBeVisible();
-//   console.log("The user entered to the Homepage");
-//   await page.pause();
-// });
