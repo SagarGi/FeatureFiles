@@ -33,7 +33,7 @@ Then(
   "the {string} message should be pop in the login page",
   async function (error) {
     const popupLocator = page.locator(popupSelector);
-    await expect(popupLocator).toBeVisible();
+    await expect(popupLocator).toHaveText(error);
     await page.pause();
   }
 );
