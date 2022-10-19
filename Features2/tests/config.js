@@ -20,18 +20,3 @@ After(async () => {
 AfterAll(async () => {
   await browser.close();
 });
-
-// // BeforeAll(function () {
-// //   console.log("This runs before every test file");
-// // });
-
-// // AfterAll(function () {
-// //   console.log("This runs after completing all the scenario");
-// // });
-
-// // After(function () {
-// //   console.log("this runs after every scenario");
-// // });
-
-// // Before(function () {
-// //   console.log("this runs Before each scenario after compleating each");
