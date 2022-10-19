@@ -6,8 +6,8 @@ Feature: login
 
    Scenario: login to contact fox account
         Given user has been navigated to login page
-        When user logs in with valid "email" and "password"
-        Then user should be redirected to Add Contact page
+        When user logs in with valid "susmitathapa412@gmail.com" and "zxcvbnm123"
+        Then user should be navigated to home page
 
    Scenario Outline: login to contact fox account
         Given user has been navigated to login page
