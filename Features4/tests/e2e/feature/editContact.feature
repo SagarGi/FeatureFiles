@@ -32,3 +32,4 @@ Scenario: Add single user and edit its data
     Then the updated contact with email "deekshyappp@gmail.com" should be updated as:
         |name       | email                |phone       |contact type |
         |deekshyappp| deekshyppp@gmail.com |956798999   |personal    |
+	
