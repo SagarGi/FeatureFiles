@@ -6,7 +6,7 @@ Background:
     Given the user has navigated to register account page
 
 Scenario:Register with valid credentials
-    When the user login with the following credentails
+    When the user registers with the following credentials
       |Name   | Email address       | Password | Confirm password |
       |Dikshya| deekshyap@gmail.com | 1234567  | 1234567          |
     Then the user should be navigated to home page
