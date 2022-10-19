@@ -10,7 +10,6 @@ Feature: Register
        When user enters following valid credentials:
          |name    |email                |password   |confirmPassword  |
          |Susmita |susmita412@gmail.com |zxcvbnm    |zxcvbnm          |
-       And clicks "Register" button
        Then user should be navigated to the homepage
 
     Scenario Outline: New user registers with invalid inputs
