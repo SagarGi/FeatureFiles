@@ -31,7 +31,7 @@ Then("user should be navigated to Contact Fox page", async function () {
 
 // For invalid credential
 Then("error message {string} should be shown", async function (alertMessage) {
-  const alertMsgSelector = "//div[@class='container']/div[1]";
+  const alertMsgSelector = "//div[@class='alert alert-danger']";
   await expect(page.locator(alertMsgSelector)).toContainText(alertMessage);
   console.log("Invalid credentials");
 });
