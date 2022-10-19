@@ -1,25 +1,4 @@
-//console.log("I'm in the config file");
-// const { Before, BeforeAll, After, AfterAll } = require("@cucumber/cucumber");
-
-// Before(function () {
-//   console.log("This hook runs before any scenario");
-// });
-
-// BeforeAll(function () {
-//   console.log(
-//     "---------------------------------------This hook runs in the beginning"
-//   );
-// });
-
-// After(function () {
-//   console.log("This hook runs after any scenario");
-// });
-
-// AfterAll(function () {
-//   console.log("------------------------------------This hook runs at the end ");
-// });
-
-const { chromium } = require("playwright");
+const { chromium } = require("playwright"); //browser engine
 const {
   BeforeAll,
   Before,
@@ -31,14 +10,15 @@ setDefaultTimeout(60000);
 
 BeforeAll(async () => {
   global.browser = await chromium.launch({
+    //browser
     headless: false,
-    slowMo: 200,
+    //slowMo: 200,
   });
 });
 
 Before(async () => {
-  global.context = await browser.newContext();
-  global.page = await context.newPage();
+  global.context = await browser.newContext(); //context
+  global.page = await context.newPage(); //page
 });
 
 AfterAll(async function () {

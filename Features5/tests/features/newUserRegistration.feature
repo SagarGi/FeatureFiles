@@ -11,7 +11,7 @@ Feature: Register
          |name    |email                |password   |confirmPassword  |
          |Susmita |susmita412@gmail.com |zxcvbnm    |zxcvbnm          |
        And clicks "Register" button
-       Then user should see the homepage
+       Then user should be navigated to the homepage
 
     Scenario Outline: New user registers with invalid inputs
        When the user registers with the following invalid inputs:
