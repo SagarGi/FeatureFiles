@@ -4,13 +4,13 @@ Feature:login feature
     So that I can have acess to the contact fox contacts
 
 
-    Scenario: Login to the ContactFox with Valid credentials
+    Scenario Outline: Login to the ContactFox with Valid credentials
         Given a user  has navigated to the login dashboard
-        When  the user enters the valid credentials with email "valid email" and Password "valid password"
+        When  the user enters the valid credentials with email "<email>" and Password "<password>"
         Then the user will be naviaged to the homepage
-        # Examples:
-        # |email|password|message|
-        # |ritaadhikari936@gmail.com|rita@123|sucessful|
+        Examples:
+        |email|password|message|
+        |demo1@gmail.com|something|sucessful|
 
     Scenario Outline:Login to the ContactFox with Invalid credentials
         Given a user  has navigated to the login dashboard
