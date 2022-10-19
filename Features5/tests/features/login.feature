@@ -18,6 +18,3 @@ Feature: login
             |susmitathapa412@gmail.com  |zxcvbnm    |Invalid credentials. |
             |susmitathapa4@gmail.com    |zxcvbnm123 |Invalid credentials. |
             |susmitathapa4@gmail.com    |zxcvbnm    |Invalid credentials. |
-          #   |susmita              |validPassword   |
-          #   |susmita              |invalidPassword |
-          #   |                     |                |
