@@ -19,13 +19,19 @@ When("user login with following credentials", async function (dataTable) {
   //   await page.fill(passwordSelector, inputData[i].password);
   // }
   await page.fill(emailSelector, inputData[0].email);
-  if (inputData[0].email.includes("@")) {
-    await page.fill(passwordSelector, inputData[0].password);
-  }
+  await page.fill(passwordSelector, inputData[0].password);
+
   console.log(inputData[0].email);
   console.log(inputData[0].password);
 
   await page.click(loginBtnSelector);
+});
+
+// For invalid credential
+Then("error message {string} should be shown", async function (alertMessage) {
+  const alertMsgSelector = "//div[@class='alert alert-danger']";
+  await expect(page.locator(alertMsgSelector)).toContainText(alertMessage);
+  console.log(alertMessage);
 });
 
 // For valid credentials
@@ -38,8 +44,8 @@ Then("user should be navigated to Contact Fox page", async function () {
 });
 
 // For invalid credential
-Then("error message {string} should be shown", async function (alertMessage) {
-  const alertMsgSelector = "//div[@class='alert alert-danger']";
-  await expect(page.locator(alertMsgSelector)).toContainText(alertMessage);
-  console.log("Invalid credentials");
-});
+// Then("error message {string} should be shown", async function (alertMessage) {
+//   const alertMsgSelector = "//div[@class='alert alert-danger']";
+//   await expect(page.locator(alertMsgSelector)).toContainText(alertMessage);
+//   console.log("Invalid credentials");
+// });
