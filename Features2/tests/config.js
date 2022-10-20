@@ -1,4 +1,5 @@
 const { BeforeAll, Before, After, AfterAll } = require("@cucumber/cucumber");
+const clearDatabase = require("./databasereset");
 const { chromium } = require("playwright");
 
 BeforeAll(async () => {
@@ -15,6 +16,7 @@ Before(async () => {
 After(async () => {
   await global.context.close();
   await global.page.close();
+  await clearDatabase();
 });
 
 AfterAll(async () => {
