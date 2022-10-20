@@ -8,8 +8,8 @@ Feature: New User Resistration
 
         Scenario: Register with valid Credentials
             When the user enters following user information
-                |name|email     |password|confirmpassword|
-                |demo|demo@gmail.com|hello123|hello123       |
+                |name|email         |password|confirmpassword|
+                |demo|demo@gmail.com|hello123|hello123       | 
             Then  the home page should be displayed on the webUI
 
         
