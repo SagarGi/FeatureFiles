@@ -15,9 +15,9 @@ Given("the user has navigated to the login page", async function () {
 
 When(
   "the user enters {string} and {string}",
-  async function (validemail, validpassword) {
-    await page.type(emailSelector, validemail);
-    await page.type(passwordSelector, validpassword);
+  async function (email,password) {
+    await page.type(emailSelector, email);
+    await page.type(passwordSelector,password);
     await page.click(LoginSelector);
   }
 );
