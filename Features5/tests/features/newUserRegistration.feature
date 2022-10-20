@@ -8,8 +8,8 @@ Feature: Register
    
    Scenario: New user registration with valid inputs
        When user enters following valid credentials:
-         |name    |email                |password   |confirmPassword  |
-         |Susmita |susmita412@gmail.com |zxcvbnm    |zxcvbnm          |
+         |name    |email                |password     |confirmPassword  |
+         |Salipa  |salipa123@gmail.com  |salipa12345  |salipa12345      |
        Then user should be navigated to the homepage
 
     Scenario Outline: New user registers with invalid inputs

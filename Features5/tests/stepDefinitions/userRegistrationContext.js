@@ -16,11 +16,20 @@ Given("user has been navigated to registration page", async function () {
 
 When("user enters following valid credentials:", async function (dataTable) {
   console.log("enters valid credentials");
-  await page.type(nameSelector, dataTable.name);
-  await page.type(emailSelector, dataTable.email);
-  await page.type(passwordSelector, dataTable.password);
-  await page.type(confirmPasswordSelector, dataTable.confirmPassword);
-  await page.click(registerSelector);
+  const myData = dataTable.hashes(); //it gives an array
+  for (let i = 0; i < myData.length; i++) {
+    //applying loop to print values of object inside an array
+    const name = myData[i].name;
+    const email = myData[i].email;
+    const password = myData[i].password;
+    const confirmPassword = myData[i].confirmPassword;
+    await page.type(nameSelector, name);
+    await page.type(emailSelector, email);
+    await page.type(passwordSelector, password);
+    await page.type(confirmPasswordSelector, confirmPassword);
+    await page.click(registerSelector);
+    await page.pause();
+  }
 });
 
 Then("user should be navigated to the homepage", async function () {
