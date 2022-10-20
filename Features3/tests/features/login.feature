@@ -18,23 +18,13 @@ Feature:
             |<email>|<password>|
         Then error message "<errorMessage>" should be shown
         Examples:
-            |   email     |password|errorMessage        |
-            |abc@gmail.com|abc     |Invalid credentials.|
-            |xyz@gmail.com|abc12345|Invalid credentials.|
-
-    Scenario Outline: Login without filling in all input fields 
-        When user login with following credentials
-            |email  |password  |
-            |<email>|<password>|
-        Then error message "<errorMessage>" should be shown
-
-        Then error message "<errorMessage>" should be shown
-        Examples:
             |   email     |password|errorMessage              |
+            |abc@gmail.com|abc     |Invalid credentials.      |
+            |xyz@gmail.com|abc12345|Invalid credentials.      |
             |abc@gmail.com|        |Please fill in all fields.|
             |             |abc12345|Please fill in all fields.|
             |             |        |Please fill in all fields.|
-            
+
     # Scenario: Login with invalid email format 
     #     When user login with following credentials
     #         |   email    |password|
