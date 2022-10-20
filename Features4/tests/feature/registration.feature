@@ -4,7 +4,7 @@ Feature:
     So that I can have access to the ContactFox Page
 
 Background:
-    Given the user has navigated to register account page
+    Given the user has navigated to the register account page
 
 Scenario:Register with valid credentials
     When the user registers with the following credentials
