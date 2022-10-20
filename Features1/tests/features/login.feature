@@ -5,14 +5,13 @@ Feature:
 
 Scenario: Login with valid credential
     Given the user has navigated to the login page
-    When  the user enters valid "samikshapaudel111@gmail.com" and "Hello123"
+    When  the user enters "samikshapaudel111@gmail.com" and "Hello123"
     Then  the home page should be displayed on the webUI
 
 Scenario: Login with invalid credential
     Given the user has navigated to the login page
-    When  the user enters invalid "invalidemail" and "invalidpassword" 
-    And   clicks the login button
-    Then  the "invalid credentials" message should be pop in the login page
+    When  the user enters "invalidemail@gmail.com" and "invalidpassword" 
+    Then  the "Invalid credentials." message should be pop in the login page
 
 Scenario: Login with invalid email format
     Given the user has navigated to the login page
