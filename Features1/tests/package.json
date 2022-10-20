@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:e2e": "cucumber-js --require ./config.js --require ./stepDefinitions/loginContext.js --format @cucumber/pretty-formatter"
+    "test:e2e": "cucumber-js --require ./config.js --require ./stepDefinitions/**/*.js --format @cucumber/pretty-formatter"
   },
   "author": "",
   "license": "ISC",
