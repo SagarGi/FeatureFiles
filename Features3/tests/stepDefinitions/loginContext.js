@@ -14,8 +14,16 @@ Given("the user has navigated to login page", async function () {
 When("user login with following credentials", async function (dataTable) {
   const inputData = dataTable.hashes();
 
+  // for (let i = 0; i < inputData.length; i++) {
+  //   await page.fill(emailSelector, inputData[i].email);
+  //   await page.fill(passwordSelector, inputData[i].password);
+  // }
   await page.fill(emailSelector, inputData[0].email);
-  await page.fill(passwordSelector, inputData[0].password);
+  if (inputData[0].email.includes("@")) {
+    await page.fill(passwordSelector, inputData[0].password);
+  }
+  console.log(inputData[0].email);
+  console.log(inputData[0].password);
 
   await page.click(loginBtnSelector);
 });
