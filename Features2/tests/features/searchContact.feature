@@ -10,10 +10,10 @@ Feature:Search contact
         | name     | Email              | Phone      | Contact Type |
         | abcde    | abcde@gmail.com    | 00000000   | Professional |
         | xyz      | xyz@gmail.com      | 111111111  | Personal     |
-        | example  |example@gmail.com   | 22222222222| Professional |
+        | example  | example@gmail.com  | 22222222222| Professional |
         | example2 | example2@gmail.com | 333333333  | Personal     |
-        | abcd1    |sabhdb@gmail.com    | 9876666    | Personal     |
-        |  cvbn    |cvbn@gmail.com      | 090099090  | Professional |
+        | abcd1    | sabhdb@gmail.com   | 9876666    | Personal     |
+        | cvbn     | cvbn@gmail.com     | 090099090  | Professional |
         | mnbv     | mnvb@gmail.com     | 098876677  | Professional |
  
      Scenario:Search contact by email
