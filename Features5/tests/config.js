@@ -1,4 +1,5 @@
 const { chromium } = require("playwright"); //browser engine
+const clearDatabase = require("./clearDatabase");
 const {
   BeforeAll,
   Before,
@@ -12,7 +13,6 @@ BeforeAll(async () => {
   global.browser = await chromium.launch({
     //browser
     headless: false,
-    //slowMo: 200,
   });
 });
 
@@ -27,5 +27,6 @@ AfterAll(async function () {
 
 After(async function () {
   await context.close();
+  await clearDatabase();
   await page.close();
 });
