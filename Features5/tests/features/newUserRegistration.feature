@@ -7,22 +7,33 @@ Feature: Register
        Given user has been navigated to registration page
    
    Scenario: New user registration with valid inputs
-       When user enters following valid credentials:
-         |name    |email                |password   |confirmPassword  |
-         |Susmita |susmita412@gmail.com |zxcvbnm    |zxcvbnm          |
-       And clicks "Register" button
+       When the user registers with following credentials:
+         |name    |email                |password     |confirmPassword  |
+         |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      |
        Then user should be navigated to the homepage
 
+    Scenario: User registers with already existing account 
+       Given the user has been registered with following credentials:
+         |name    |email                |password     |confirmPassword  |
+         |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      | 
+       And the user log outs
+       And user has been navigated to registration page
+       When the user registers with following credentials:
+         |name    |email                |password     |confirmPassword  |
+         |Salipa  |salipa123@gmail.com  |salipa12345  |salipa12345      |
+       Then user should see the message "User already exists. Please choose another email address."
+        
+
     Scenario Outline: New user registers with invalid inputs
-       When the user registers with the following invalid inputs:
+       When the user registers with following credentials:
        |name  |email   |password   |confirmPassword|
        |<name>|<email> |<password> |<confirmPassword>|
        Then user should see the message "<error>"
        Examples:
          |name        |email                 |password  |confirmPassword  |error                            |
-         |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvbnn          |passwords do not match           |
-         |Susmita     |susmita412@gmail.com  |zxcv      |zxcv             |password less than 6 characters  |
-         |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvb            |passwords less than 6 characters | 
-         |Susmita     |susmita               |zxcvbnm   |zxcvbnn          |missing @ symbol                 |
-         |Susmita     |@gmail.com            |zxcvbnm   |zxcvbnn          |part missing before @            |
-         |            |                      |          |                 |please enter all the fields      |
+         |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvbnn          |Passwords do not match.          |
+         |            |                      |          |                 |Please enter all fields.         |
+        # these two scenarios does not work because its popup error cannot be found since it appears in input field  
+        #  |Susmita     |susmita412@gmail.com  |zxcv      |zxcv             |password less than 6 characters  |
+        #  |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvb            |passwords less than 6 characters | 
+         

@@ -1,8 +1,9 @@
 const { Before, After, AfterAll, BeforeAll } = require("@cucumber/cucumber");
 const { chromium } = require("playwright");
+const clearDatabases = require("./databaseCleaner");
 
 BeforeAll(async () => {
-  global.browser = await chromium.launch({ headless: false });
+  global.browser = await chromium.launch({});
 });
 
 Before(async () => {
@@ -13,9 +14,9 @@ Before(async () => {
 After(async () => {
   await global.browserContext.close();
   await global.page.close();
+  await clearDatabases();
 });
 
 AfterAll(async () => {
   await browser.close();
 });
-
