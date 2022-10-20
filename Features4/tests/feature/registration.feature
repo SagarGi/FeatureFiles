@@ -1,7 +1,8 @@
 Feature:
     As user
     I want to register my credentials
-    So that I can have acess to the ContactFoxpage
+    So that I can have access to the ContactFox Page
+
 Background:
     Given the user has navigated to register account page
 
