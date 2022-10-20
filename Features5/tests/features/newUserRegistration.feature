@@ -7,21 +7,19 @@ Feature: Register
        Given user has been navigated to registration page
    
    Scenario: New user registration with valid inputs
-       When user enters following valid credentials:
+       When the user registers with following credentials:
          |name    |email                |password     |confirmPassword  |
          |Salipa  |salipa123@gmail.com  |salipa12345  |salipa12345      |
        Then user should be navigated to the homepage
 
     Scenario Outline: New user registers with invalid inputs
-       When the user registers with the following invalid inputs:
+       When the user registers with following credentials:
        |name  |email   |password   |confirmPassword|
        |<name>|<email> |<password> |<confirmPassword>|
        Then user should see the message "<error>"
        Examples:
          |name        |email                 |password  |confirmPassword  |error                            |
-         |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvbnn          |passwords do not match           |
-         |Susmita     |susmita412@gmail.com  |zxcv      |zxcv             |password less than 6 characters  |
-         |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvb            |passwords less than 6 characters | 
-         |Susmita     |susmita               |zxcvbnm   |zxcvbnn          |missing @ symbol                 |
-         |Susmita     |@gmail.com            |zxcvbnm   |zxcvbnn          |part missing before @            |
-         |            |                      |          |                 |please enter all the fields      |
+        #  |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvbnn          |passwords do not match           |
+        #  |Susmita     |susmita412@gmail.com  |zxcv      |zxcv             |password less than 6 characters  |
+        #  |Susmita     |susmita412@gmail.com  |zxcvbnm   |zxcvb            |passwords less than 6 characters | 
+         |            |                      |          |                 |Please enter all fields.      |
