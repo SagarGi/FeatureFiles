@@ -25,3 +25,4 @@ Scenario Outline: Create and delete all created contacts from contact list
         Examples:
         |name| email          | phone     | contact-type |
         |xyz | xyz@gmail.com  |9876543210 | Personal     |
+	
