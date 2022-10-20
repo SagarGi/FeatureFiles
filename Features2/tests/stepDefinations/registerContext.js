@@ -1,8 +1,6 @@
 const { Given, When, Then, setDefaultTimeout } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
-// import { setDefaultTimeout } from "cucumber";
-// const { setDefaultTimeout } = require("@cucumber/cucumber");
-// config = { expect: { timeout: 10000 } };
+
 setDefaultTimeout(60 * 1000);
 const registerSelector = 'a[href="/register"]';
 const nameSelector = 'input[name="name"]';
@@ -11,6 +9,7 @@ const passwordSelector = 'input[name="password"]';
 const confirmSelector = 'input[name="password2"]';
 const logoutSelector = 'span[class="hide-sm"]';
 const registerButtomSelector = 'input[value="Register"]';
+const messageSelector = 'div[class="alert alert-danger"]';
 
 Given("the user has clicked Register button", async function () {
   await page.click(registerSelector);
@@ -41,6 +40,20 @@ Then(
   async function () {
     const logoutLocator = page.locator(logoutSelector);
     await expect(logoutLocator).toBeVisible();
+    console.log("The user entered to the Homepage");
+    await page.pause();
+  }
+);
+
+Given("the user has clicked logout button", async function () {
+  await page.click(logoutSelector);
+});
+
+Then(
+  "the user will hovered with the message {string}",
+  async function (message) {
+    const messageLocator = page.locator(messageSelector);
+    await expect(messageLocator).toBeVisible();
     console.log("The user entered to the Homepage");
     await page.pause();
   }
