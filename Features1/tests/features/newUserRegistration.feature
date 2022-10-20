@@ -8,9 +8,18 @@ Feature: New User Resistration
 
         Scenario: Register with valid Credentials
             When the user enters following contact information
-                |name    |email             |password|confirm password|
-                |Samiksha|samiksha@gmail.com|hello123|hello123        |
+                |name    |email             |password|confirmpassword|
+                |demo|demo@gmail.com|hello123|hello123        |
             Then  the home page should be displayed on the webUI
+
+
+            #assuming that this email "demo@gmail.com" has been register
+        
+        Scenario: Register with already existing user 
+            When the user enters following contact information
+                |name    |email             |password|confirmpassword|
+                |demo|demo@gmail.com|hello123|hello123        |  
+            Then error message "User already exists. Please choose another email address." should pop up on the webUI
 
 
         Scenario Outline: Register with invalid email format
