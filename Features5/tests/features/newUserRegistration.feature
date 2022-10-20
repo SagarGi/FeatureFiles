@@ -15,8 +15,7 @@ Feature: Register
     Scenario: User registers with already existing account 
        Given the user has been registered with following credentials:
          |name    |email                |password     |confirmPassword  |
-         |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      |
-       And the user has been navigated to homepage  
+         |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      | 
        And the user log outs
        And user has been navigated to registration page
        When the user registers with following credentials:

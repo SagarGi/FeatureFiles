@@ -33,7 +33,6 @@ When(
       await page.type(passwordSelector, password);
       await page.type(confirmPasswordSelector, confirmPassword);
       await page.click(registerSelector);
-      // await page.pause();
     }
   }
 );
@@ -71,5 +70,4 @@ Then("user should be navigated to the homepage", async function () {
 
 Then("user should see the message {string}", async function (error) {
   await expect(page.locator(popUpSelector)).toHaveText(error);
-  //await page.pause();
 });
