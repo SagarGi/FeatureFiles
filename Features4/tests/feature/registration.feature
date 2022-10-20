@@ -10,7 +10,7 @@ Scenario:Register with valid credentials
     When the user registers with the following credentials
       |Name   | Email address       | Password | Confirm password |
       |Dikshya| deekshyap@gmail.com | 1234567  | 1234567          |
-    Then the user should be navigated to home page
+    Then the user should be navigated to the home page
 
 Scenario Outline:Register with invalid email format
     When the user enters invalid email address format "<Email address>"
