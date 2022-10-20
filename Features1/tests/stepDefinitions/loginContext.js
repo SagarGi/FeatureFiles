@@ -36,3 +36,8 @@ Then(
     await page.pause();
   }
 );
+
+Given('the has entered following contact information', function (dataTable) {
+  
+});
+

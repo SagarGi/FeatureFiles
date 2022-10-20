@@ -4,8 +4,14 @@ Feature:
     So that i can access to the home page
 
 Scenario: Login with valid credential
-    Given the user has navigated to the login page
-    When  the user enters "samikshapaudel111@gmail.com" and "Hello123"
+     Given the user has navigated to the register page
+     And the user has been register with following user information
+        |name    |email         |password|confirmpassword|
+        |demo    |demo@gmail.com|hello123|hello123       |
+    And the home page has been displayed on the webUI
+    And user has logged out 
+    And the user has navigated to the login page   
+    When  the user enters "demo@gmail.com" and "hello123"
     Then  the home page should be displayed on the webUI
 
 Scenario: Login with invalid credential
