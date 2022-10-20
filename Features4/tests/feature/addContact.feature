@@ -4,7 +4,7 @@ Feature:
     So that I can save my contacts
 
 Background:
-	Given the user has logged in with the valid email "deekshyap@gmail.com" and password "123456"
+    Given the user has logged in with the valid email "deekshyap@gmail.com" and password "123456"
     And the user navigated to the homepage 
 
 Scenario Outline: Add Contact 
