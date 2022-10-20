@@ -1,15 +1,9 @@
-const {
-  Before,
-  After,
-  AfterAll,
-  BeforeAll,
-  setDefaultTimeout,
-} = require("@cucumber/cucumber");
+const { Before, After, AfterAll, BeforeAll } = require("@cucumber/cucumber");
 const { chromium } = require("playwright");
-setDefaultTimeout(60000);
+const clearDatabases = require("./databaseCleaner");
 
 BeforeAll(async () => {
-  global.browser = await chromium.launch({ headless: false, slowMo: 100 });
+  global.browser = await chromium.launch({});
 });
 
 Before(async () => {
@@ -20,6 +14,7 @@ Before(async () => {
 After(async () => {
   await global.browserContext.close();
   await global.page.close();
+  await clearDatabases();
 });
 
 AfterAll(async () => {
