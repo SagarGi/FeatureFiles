@@ -22,8 +22,7 @@ Scenario Outline:Login with wrong password and wrong email address
     When the user enters email address as "<email address>" and password as "<password>"
     Then the error message "<message>" should be popup
     Examples:
-        | email address    | password | message            |
-        | dadhi@gmail.com  | 12345678 |Invalid Credentials |
-        | dadhir@gmail.com | 1234     |Invalid Credentials |
-
+        | email address    | password | message             |
+        | dadhi@gmail.com  | 12345678 |Invalid credentials. |
+        | dadhir@gmail.com | 1234     |Invalid credentials. |
 
