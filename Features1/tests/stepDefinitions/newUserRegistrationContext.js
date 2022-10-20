@@ -16,7 +16,7 @@ Given("the user has navigated to the register page", async function () {
 });
 
 When(
-  "the user enters following contact information",
+  "the user enters following user information",
   async function (dataTable) {
     const dataArray = dataTable.hashes();
     for (i = 0; i < dataArray.length; i++) {
@@ -43,7 +43,7 @@ Then(
 );
 
 Given(
-  "the user has been register with following contact information",
+  "the user has been register with following user information",
   async function (dataTable) {
     const dataArray = dataTable.hashes();
     for (i = 0; i < dataArray.length; i++) {
