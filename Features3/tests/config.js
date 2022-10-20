@@ -1,5 +1,6 @@
 const { Before, BeforeAll, After, AfterAll } = require("@cucumber/cucumber");
 const { chromium } = require("playwright");
+const clearDatabase = require("./dbCleanUp");
 
 Before(async function () {
   console.log("This is executed before every scenario");
@@ -9,6 +10,7 @@ Before(async function () {
 
 After(async function () {
   console.log("This is executed after every scenario");
+  await clearDatabase();
   await global.page.close();
   await global.context.close();
 });
