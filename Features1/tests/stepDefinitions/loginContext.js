@@ -26,7 +26,6 @@ Then("the home page should be displayed on the webUI", async function () {
   const logoutLocator = page.locator(logoutSelector);
   await expect(logoutLocator).toBeVisible();
   console.log("The user is navigated to the home page");
-  await page.pause();
 });
 
 Then(
