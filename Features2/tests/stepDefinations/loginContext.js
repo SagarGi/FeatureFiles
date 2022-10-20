@@ -26,23 +26,13 @@ When(
   }
 );
 
-// Then("the user will be naviaged to the homepage", async function () {
-//   // Write code here that turns the phrase above into concrete actions
-//   const logoutLocator = page.locator(logoutSelector);
-//   await expect(logoutLocator).toBeVisible();
-//   console.log("The user entered to the Homepage");
-//   await page.pause();
-// });
-
 Then(
   "the user should be given invalid credentials {string}",
   async function (errorMessage) {
     const errorMessageLocator = page.locator(messageSelector);
     const [innerText] = await errorMessageLocator.allInnerTexts();
-    console.log(innerText, typeof innerText);
     await expect(errorMessageLocator).toBeVisible();
     console.log("The user entered to the Loginpage");
-    console.log(errorMessage == innerText.trim());
     if (innerText.trim() !== errorMessage) {
       throw new Error("Expected message not found");
     }

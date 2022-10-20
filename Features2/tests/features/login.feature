@@ -19,7 +19,6 @@ Feature:login feature
         Examples:
             |email                  |password |message             |
             |abcdefghij345@gmail.com|236625364| Invalid credentials.|
-            # |abc@g.c                |something|Invalid Credentials!|
         
 
     Scenario Outline:when you input invalid email
