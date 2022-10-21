@@ -41,7 +41,6 @@ Then(
     const logoutLocator = page.locator(logoutSelector);
     await expect(logoutLocator).toBeVisible();
     console.log("The user entered to the Homepage");
-    await page.pause();
   }
 );
 
@@ -55,6 +54,5 @@ Then(
     const messageLocator = page.locator(messageSelector);
     await expect(messageLocator).toBeVisible();
     console.log("The user entered to the Homepage");
-    await page.pause();
   }
 );
