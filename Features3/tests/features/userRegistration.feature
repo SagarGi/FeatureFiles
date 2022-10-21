@@ -35,20 +35,20 @@ Feature: Register new user account
             |<name>|<email> |<password>|<confirmPassword>|
         Then pop up should appear showing informational message as "Please enter all fields." on the webUI
         Examples:
-            |name|  email      |password|confirmPassword |errorMessage            |
-            |    |abc@gmail.com|abc12345|abc12345        |Please enter all fields.|
-            |abc |             |abc12345|abc12345        |Please enter all fields.|
-            |abc |abc@gmail.com|        |abc12345        |Please enter all fields.|
-            |    |abc@gmail.com|abc12345|abc12345        |Please enter all fields.|
-            |    |             |abc12345|abc12345        |Please enter all fields.|
-            |abc |             |        |abc12345        |Please enter all fields.|
-            |abc |abc@gmail.com|        |                |Please enter all fields.|
-            |    |abc@gmail.com|abc12345|                |Please enter all fields.|
-            |abc |             |        |                |Please enter all fields.|
-            |    |abc@gmail.com|        |                |Please enter all fields.|
-            |    |             |abc12345|                |Please enter all fields.|
-            |    |             |        |abc12345        |Please enter all fields.|
-            |    |             |        |                |Please enter all fields.|
+            |name|  email      |password|confirmPassword |
+            |    |abc@gmail.com|abc12345|abc12345        |
+            |abc |             |abc12345|abc12345        |
+            |abc |abc@gmail.com|        |abc12345        |
+            |    |abc@gmail.com|abc12345|abc12345        |
+            |    |             |abc12345|abc12345        |
+            |abc |             |        |abc12345        |
+            |abc |abc@gmail.com|        |                |
+            |    |abc@gmail.com|abc12345|                |
+            |abc |             |        |                |
+            |    |abc@gmail.com|        |                |
+            |    |             |abc12345|                |
+            |    |             |        |abc12345        |
+            |    |             |        |                |
 
     # Scenario: Register with invalid email format
     #     When User registers new account entering following credentials
