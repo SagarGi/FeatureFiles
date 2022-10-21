@@ -14,7 +14,7 @@ Feature:User registration
             Then the user will be registered and navigated to the homepage
 
         Scenario:Register using already existing user information
-            And the user enters the name with "Rita" and email with "rita@gmail.com" and password with "password" and confirm password with "password"
+            Given the user enters the name with "Rita" and email with "rita@gmail.com" and password with "password" and confirm password with "password"
             And the user will be registered and navigated to the homepage
             And the user has clicked logout button 
             And the user has clicked Register button
