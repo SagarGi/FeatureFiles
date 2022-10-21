@@ -23,7 +23,9 @@ When(
 );
 
 Then("user should be navigated to home page", async function () {
-  await page.isVisible(logoutSelector);
+  const logoutLocator = page.locator(logoutSelector);
+  await expect(logoutLocator).toBeVisible();
+  //await page.toBeVisible(logoutSelector);
 });
 
 //invalid Scenario
