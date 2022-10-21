@@ -2,17 +2,17 @@
 const {Given,When,Then} = require("@cucumber/cucumber");
 const {expect} =require("@playwright/test");
  
-const registerLocator = 'a[href="/register"]';
+const registersSelector = 'a[href="/register"]';
 const selectorName ='input[name="name"]';
 const selectorEmail = 'input[name="email"]';
 const selectorPassword = 'input[name="password"]';
-const selectorRegister = 'input[type="submit"]';
+const selectorRegisterbtn = 'input[type="submit"]';
 const selectorConfirmPass = 'input[name="password2"]';
 const selectorLogout = 'span[class="hide-sm"]';
 
 Given('the user has navigated to the register page', async function () {
  console.log("The user has to navigated to the register page:");
- page.click(registerLocator);
+ await page.click(registersSelector);
 });
 
 
@@ -28,7 +28,7 @@ When('the user registers with the following credentials', async function (dataTa
   await page.type(selectorEmail ,email);
   await page.type(selectorPassword ,password);
   await page.type(selectorConfirmPass ,confirmPassword);
-  await page.click(selectorRegister);
+  await page.click(selectorRegisterbtn);
  }
  });
 
@@ -51,4 +51,3 @@ When('the user registers with the following credentials', async function (dataTa
 Given('the user logged out from the home page',  async function () {
  await page.click(selectorLogout);
 });
-
