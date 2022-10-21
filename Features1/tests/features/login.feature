@@ -4,8 +4,8 @@ Feature:
     So that i can access to the home page
 
 Scenario: Login with valid credential
-     Given the user has navigated to the register page
-     And the user has been register with following user information
+    Given the user has navigated to the register page
+    And the user has been register with following user information
         |name    |email         |password|confirmpassword|
         |demo    |demo@gmail.com|hello123|hello123       |
     And the home page has been displayed on the webUI

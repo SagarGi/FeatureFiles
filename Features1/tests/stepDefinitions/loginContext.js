@@ -37,7 +37,3 @@ Then(
   }
 );
 
-Given('the has entered following contact information', function (dataTable) {
-  
-});
-
