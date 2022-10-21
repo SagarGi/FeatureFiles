@@ -7,7 +7,6 @@ const emailSelector = 'input[name="email"]';
 const passwordSelector = 'input[name="password"]';
 const confirmSelector = 'input[name="password2"]';
 
-
 Given("the user has clicked Register button", async function () {
   await page.click(registerSelector);
 });
@@ -32,6 +31,19 @@ When(
   }
 );
 
-Then('the user will be registered and navigated to the homepage', function () {
-    
-  });
+Then("the user will be registered and navigated to the homepage", function () {
+  Then(
+    "the user should be given invalid credentials {string}",
+    async function (errorMessage) {
+      const errorMessageLocator = page.locator(messageSelector);
+      const [innerText] = await errorMessageLocator.allInnerTexts();
+      await expect(errorMessageLocator).toBeVisible();
+      console.log(innertext.trim());
+      console.log("The user entered to the Loginpage");
+      if (innerText.trim() !== errorMessage) {
+        throw new Error("Expected message not found");
+      }
+      // await page.pause();
+    }
+  );
+});
