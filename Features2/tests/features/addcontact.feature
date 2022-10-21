@@ -26,11 +26,32 @@ Feature:AddContact
     #          | risahgdgajda36gmail.com | Please enter an email address |
 
 
-    Scenario: Add one contact 
+    Scenario: Add multiple contact 
         Given a user has navigated to the login dashboard
         And the user has clicked Register button
         And the user has been navigated to the Registration page
         And  the user has been registered with the name with "Rita" and email with "rita@gmail.com" and password with "password" and confirm password with "password"
         And the user has been navigated to the homepage
-        When the user submits name with "Rita" and email with "rita@gmail.com" and phone with "0000000000" chooses the contact type as "personal"
+        When the following contacts have been added
+            |name    |email             |phone    |type         |       
+            |rita    |rita@gmail.com    |00000000 |personal     |
+            |susmita |susmita@gmail.com |00000000 |professional |
+            |sami    |ritaadh@gmail.com |11111111 |personal     |
         Then the user info should be added to the contact list with email "rita@gmail.com"
+        And the user info should be added to the contact list with email "susmita@gmail.com"
+        And the user info should be added to the contact list with email "ritaadh@gmail.com"
+        
+    Scenario:Add single contact
+        Given a user has navigated to the login dashboard
+        And the user has clicked Register button
+        And the user has been navigated to the Registration page
+        And  the user has been registered with the name with "Rita" and email with "rita@gmail.com" and password with "password" and confirm password with "password"
+        And the user has been navigated to the homepage
+        When the following contacts have been added
+            |name    |email             |phone    |type         |       
+            |rita    |rita@gmail.com    |00000000 |personal     |
+        Then the user info should be added to the contact list with email "rita@gmail.com"
+        
+
+
+    

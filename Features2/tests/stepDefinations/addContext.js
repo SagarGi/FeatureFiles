@@ -1,16 +1,11 @@
 const { Given, When, Then, setDefaultTimeout } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 
-const registerSelector = 'a[href="/register"]';
 const nameSelector = 'input[name="name"]';
-const homeemailSelector = 'input[name="email"]';
 const emailSelector = 'input[name="email"]';
 const passwordSelector = 'input[name="password"]';
 const confirmSelector = 'input[name="password2"]';
-const logoutSelector = 'span[class="hide-sm"]';
 const registerButtomSelector = 'input[value="Register"]';
-const messageSelector = 'div[class="alert alert-danger"]';
-// const homenameSelector = 'input[name="name"]';
 const homephoneSelector = 'input[name="phone"]';
 const addSelector = 'input[value="Add Contact"]';
 const emailshownSelector = '//i[@class="fas fa-envelope-open-text"]/parent::li';
@@ -34,7 +29,6 @@ Given("the user has been navigated to the homepage", async function () {
 When(
   "the user submits name with {string} and email with {string} and phone with {string} chooses the contact type as {string}",
   async function (name, email, phone, contacType) {
-    await page.pause();
     await page.type(nameSelector, name);
     await page.type(emailSelector, email);
     await page.type(homephoneSelector, phone);
@@ -48,7 +42,7 @@ When(
 Then(
   "the user info should be added to the contact list with email {string}",
   async function (email) {
-    const emailLocator = page.locator(emailshownSelector);
+    const emailLocator = await page.locator(emailshownSelector);
     const [innerText] = await emailLocator.allInnerTexts();
     console.log(innerText);
     await expect(emailLocator).toBeVisible();
@@ -57,3 +51,26 @@ Then(
     }
   }
 );
+When("the following contacts have been added", async function (dataTable) {
+  const contacts = dataTable.hashes();
+  for (const contact of contacts) {
+    await page.type(nameSelector, contact.name);
+    await page.type(emailSelector, contact.email);
+    await page.type(homephoneSelector, contact.phone);
+    const contacttypeSelector = `input[value=${contact.type}]`;
+    await page.click(contacttypeSelector);
+    console.log(contacttypeSelector);
+    await page.click(addSelector);
+  }
+  // contacts.forEach(async (singleContact) => {
+  //   console.log(singleContact);
+
+  //   await page.type(nameSelector, singleContact.name);
+  //   await page.type(emailSelector, singleContact.email);
+  //   await page.type(homephoneSelector, singleContact.phone);
+  //   const contacttypeSelector = `input[value=${singleContact.type}]`;
+  //   await page.click(contacttypeSelector);
+  //   console.log(contacttypeSelector);
+  //   await page.click(addSelector);
+  // });
+});
