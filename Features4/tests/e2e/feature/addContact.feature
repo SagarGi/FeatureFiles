@@ -4,8 +4,12 @@ Feature:
     So that I can save my contacts
 
 Background:
-    Given the user has logged in with the valid email "deekshyap@gmail.com" and password "123456"
-    And the user navigated to the homepage 
+    Given the user has navigated to the login page
+    And the user has navigated to the register page
+    And the user has been register with the following credentials
+        |name   | email               | password   | confirmpassword  |
+        |Dexya  | dexyap@gmail.com    | 123456789  | 123456789        |
+    And  the home page should be displayed on the webUI    
 
 Scenario Outline: Add Contact 
     When the user enters name as "<Name>", email as "<Email>", phone as "<Phone>" and Contact type as "<Contact Type>"    
