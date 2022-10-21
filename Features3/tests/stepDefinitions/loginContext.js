@@ -8,7 +8,6 @@ const loginBtnSelector = "//input[@value='Login']";
 Given("the user has navigated to login page", async function () {
   console.log("Navigated to Login page");
   await page.goto("http://localhost:3000/");
-  // await page.pause();
 });
 
 When("user login with following credentials", async function (dataTable) {
