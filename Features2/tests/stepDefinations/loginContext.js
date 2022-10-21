@@ -29,9 +29,9 @@ When(
 Then(
   "the user should be given invalid credentials {string}",
   async function (errorMessage) {
-    const errorMessageLocator = page.locator(messageSelector);
-    const [innerText] = await errorMessageLocator.allInnerTexts();
-    await expect(errorMessageLocator).toBeVisible();
+    const messageLocator = page.locator(messageSelector);
+    const [innerText] = await messageLocator.allInnerTexts();
+    await expect(messageLocator).toBeVisible();
     console.log("The user entered to the Loginpage");
     if (innerText.trim() !== errorMessage) {
       throw new Error("Expected message not found");
