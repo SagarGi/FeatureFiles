@@ -2,10 +2,10 @@ const { Before, After, AfterAll, BeforeAll, setDefaultTimeout } = require("@cucu
 const clearDatabase = require("../databaseclear ");
 const { chromium } = require("playwright");
 
-// setDefaultTimeout(30 * 10000)
+setDefaultTimeout(30 * 10000)
 
 BeforeAll(async () => {
-  global.browser = await chromium.launch({ headless: false });
+  global.browser = await chromium.launch();
 });
 
 Before(async () => {
@@ -16,7 +16,7 @@ Before(async () => {
 After(async () => {
   await global.browserContext.close();
   await global.page.close();
-  await clearDatabase;
+  await clearDatabase();
 });
 
 AfterAll(async () => {

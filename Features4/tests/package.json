@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test:e2e": "cucumber-js  --require e2e/config.js --require e2e/StepDefinations/loginContex.js --format @cucumber/pretty-formatter"
+    "test:e2e": "cucumber-js  --require e2e/config.js --require e2e/StepDefinations/**/*.js --format @cucumber/pretty-formatter"
   },
   "author": "",
   "license": "ISC",

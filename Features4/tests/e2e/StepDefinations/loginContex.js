@@ -19,6 +19,7 @@ When('the user enters email address as {string} and password as {string}',async 
 });
 
 Then('the home page should be displayed on the webUI',async function () {
+
     const logoutLocator= page.locator(selectorLogout);
     await expect(logoutLocator).toBeVisible();
     console.log("THe user is navigated to the home page:");
