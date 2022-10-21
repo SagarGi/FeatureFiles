@@ -4,7 +4,12 @@ Feature:
     So that I can add new contacts
 
     Background:
-        Given the user has navigated to login page
+        Given User has navigated to register page
+        And User registers new account entering following credentials
+            |name|  email      |password|confirmPassword|
+            |abc |abc@gmail.com|abc12345|abc12345       |
+        And user has logged out 
+        And the user has navigated to login page
 
     Scenario: Login with valid credential
         When user login with following credentials
