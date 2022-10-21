@@ -4,7 +4,7 @@ Feature:User registration
     So I can have valid credentials to login to use the Contact Fox
      
     Background:The user is in Registration page 
-        Given a user  has navigated to the login dashboard
+        Given a user has navigated to the login dashboard
         And the user has clicked Register button
         And the user has been navigated to the Registration page
 

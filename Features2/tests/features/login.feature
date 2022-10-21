@@ -5,7 +5,7 @@ Feature:login feature
 
 
     Scenario Outline: Login to the ContactFox with valid credentials
-        Given a user  has navigated to the login dashboard
+        Given a user has navigated to the login dashboard
         When  the user enters the credentials with email "<email>" and Password "<password>"
         Then the user should  be naviaged to the homepage
         Examples:
@@ -13,7 +13,7 @@ Feature:login feature
             |demo1@gmail.com|something|sucessful|
 
     Scenario Outline:Login to the ContactFox with invalid credentials
-        Given a user  has navigated to the login dashboard
+        Given a user has navigated to the login dashboard
         When  the user enters the credentials with email "<email>" and Password "<password>" 
         Then the user should be given invalid credentials "<message>"
         Examples:

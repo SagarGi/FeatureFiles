@@ -14,7 +14,7 @@ Given("the user has clicked Register button", async function () {
 Given(
   "the user has been navigated to the Registration page",
   async function () {
-    console.log("user  has navigated to the  Registration dashboard");
+    console.log("user has navigated to the  Registration dashboard");
     await page.goto("http://localhost:3000/register");
   }
 );

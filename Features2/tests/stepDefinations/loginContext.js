@@ -7,9 +7,9 @@ const loginSelector = 'input[value="Login"]';
 const logoutSelector = 'a[href="#!"]';
 const messageSelector = 'div[class="alert alert-danger"]';
 
-Given("a user  has navigated to the login dashboard", async function () {
+Given("a user has navigated to the login dashboard", async function () {
   // Write code here that turns the phrase above into concrete actions
-  console.log("user  has navigated to the login dashboard");
+  console.log("user has navigated to the login dashboard");
 
   await page.goto("http://localhost:3000");
   // await page.pause();
