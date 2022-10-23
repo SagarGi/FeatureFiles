@@ -14,7 +14,7 @@ Feature: New User Resistration
 
         
         Scenario: Register with already existing user 
-            Given the user has been register with following user information
+            Given the user has been registered with following user information
                 |name    |email         |password|confirmpassword|
                 |demo    |demo@gmail.com|hello123|hello123       |
             And the home page has been displayed on the webUI
