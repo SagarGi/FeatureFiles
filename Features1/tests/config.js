@@ -3,7 +3,7 @@ const { chromium } = require("playwright");
 const clearDatabases = require("./databaseCleaner");
 
 BeforeAll(async () => {
-  global.browser = await chromium.launch({ headless: false, slowMo: 100 });
+  global.browser = await chromium.launch({});
 });
 
 Before(async () => {
