@@ -43,7 +43,7 @@ Then(
 );
 
 Given(
-  "the user has been register with following user information",
+  "the user has been registered with following user information",
   async function (dataTable) {
     const dataArray = dataTable.hashes();
     for (i = 0; i < dataArray.length; i++) {

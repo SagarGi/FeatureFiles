@@ -10,11 +10,10 @@ const popupSelector = 'div[class="alert alert-danger"]';
 Given("the user has navigated to the login page", async function () {
   console.log("The user has navigated to the login page");
   await page.goto("http://localhost:3000");
-  //await page.pause();
 });
 
 When(
-  "the user enters {string} and {string}",
+  "the user login with email {string} and password {string}",
   async function (email,password) {
     await page.type(emailSelector, email);
     await page.type(passwordSelector,password);
@@ -36,3 +35,4 @@ Then(
     await page.pause();
   }
 );
+
