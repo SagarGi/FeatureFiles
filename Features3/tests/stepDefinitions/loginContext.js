@@ -17,8 +17,8 @@ When("user login with following credentials", async function (dataTable) {
 
 // For valid credentials
 Then("user should be navigated to Contact Fox page", async function () {
-  const logoutBtn = page.locator(loginPage.logoutBtn);
-  await expect(logoutBtn).toBeVisible();
+  const logoutBtnLocator = page.locator(loginPage.logoutBtn);
+  await expect(logoutBtnLocator).toBeVisible();
 });
 
 // For invalid credential
