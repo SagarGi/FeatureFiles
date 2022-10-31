@@ -4,7 +4,7 @@ class LoginPage {
     this.emailSelector = "//input[@name='email']";
     this.passwordSelector = "//input[@name='password']";
     this.loginBtnSelector = "//input[@value='Login']";
-    this.logoutBtn = "//span[@class='hide-sm']";
+    this.logoutBtnSelector = "//span[@class='hide-sm']";
     this.alertMsgSelector = "//div[@class='alert alert-danger']";
   }
 
