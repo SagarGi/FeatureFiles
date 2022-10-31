@@ -12,17 +12,17 @@ Background:
     And  the home page should be displayed on the webUI    
 
 Scenario Outline: Add Contact 
-    When the user enters name as "<Name>", email as "<Email>", phone as "<Phone>" and Contact type as "<Contact Type>"    
-    Then the contacts with name as "<Name>", email as "<Email>", phone as "<Phone>" and Contact type as "<Contact Type>"should be displayed
+    When the user enters name as "<Name>", email as "<Email>", phone as "<Phone>" and Contact type as "<Contacttype>"    
+    Then the contacts with name as "<Name>", email as "<Email>", phone as "<Phone>" and Contact type as "<Contacttype>"should be displayed
     Examples: 
-        | Name | Email           | Phone       | Contact Type |
+        | Name | Email           | Phone       | Contacttype |
         | Hari | hari@gmail.com  | 9477859959  | Personal     |
         | Ram  | ram@gmail.com   | 9883738388  | Professional |
 
 Scenario Outline: User added incorrect email format
-    When the user enters name as "<Name>", email as "<Email>", phone as "<Phone>" and Contact type as "<Contact Type>"
+    When the user enters name as "<Name>", email as "<Email>", phone as "<Phone>" and Contact type as "<Contacttype>"
     Then the popup message "<Message>" should be seen
     Examples:
-        | Name | Email        | Phone       | Contact Type | Message                                    |
+        | Name | Email        | Phone       | Contacttype | Message                                    |
         | abc  | xyxgmail.com | 98688664884 | Personal     | Please include an '@' in the email address |
         | xyz  | yhh@.com     | 65493934995 | Professional | . is used at a wrong position in a .com    |

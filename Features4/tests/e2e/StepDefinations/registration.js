@@ -44,7 +44,7 @@ When('the user registers with the following credentials', async function (dataTa
   await page.type(selectorEmail ,email);
   await page.type(selectorPassword ,password);
   await page.type(selectorConfirmPass ,confirmPassword);
-  await page.click(selectorRegister);
+  await page.click(selectorRegisterbtn);
   }
 });
 

@@ -1,33 +1,27 @@
 const {Given,When,Then} = require("@cucumber/cucumber");
-const {expect} =require("@playwright/test");
+const {expect} = require("@playwright/test");
+const { LoginPage } = require("../PageObject/LoginPage");
 
-const selectorEmail = "input[name='email']";
-const selectorPassword= "input[name='password']";
-const selectorLoginbtn= "input[type='submit']";
-const selectorLogout ="span[class ='hide-sm']";
-const selectorInvalidcre = "div[class = 'alert alert-danger']";
+const loginPage= new LoginPage();
 
 Given("the user has navigated to the login page", async function () {
     console.log("The user has navigated to the login page:");
-    await page.goto("http://localhost:3000/");
+    await loginPage.navigate();
 });
 
 When('the user enters email address as {string} and password as {string}',async function (email, password) {
-    await page.type(selectorEmail,email);
-    await page.type(selectorPassword,password);
-    await page.click(selectorLoginbtn);
+    await loginPage.login(email, password);
 });
 
 Then('the home page should be displayed on the webUI',async function () {
-
-    const logoutLocator= page.locator(selectorLogout);
+    const logoutLocator =await page.locator(loginPage.selectorLogout);
     await expect(logoutLocator).toBeVisible();
-    console.log("THe user is navigated to the home page:");
 });
+
 //For InValid crdentials
 Then('the error message {string} should be popup',async function (message) {
-   await page.waitForSelector(selectorInvalidcre);
-   const errorMessage = await page.locator(selectorInvalidcre);
+   await page.waitForSelector(loginPage.selectorInvalidcre);
+   const errorMessage = await page.locator(loginPage.selectorInvalidcre);
    const [innertext] = await errorMessage.allInnerTexts();
    console.log("The user entered to the LoginPage");
    if(innertext.trim() !== message.trim()){
