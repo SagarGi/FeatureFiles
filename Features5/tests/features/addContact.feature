@@ -3,30 +3,34 @@ Feature: Add Contact
      I want to add contacts
      So that I can save my contacts
      
-     Background:
-        Given user has been navigated to homepage
-
-     Scenario Outline: User add contacts with valid inputs
+     Scenario Outline: User adds single contact with valid inputs
+        Given user has been navigated to registration page
+        And the user has been registered with following credentials:
+         |name    |email                |password     |confirmPassword  |
+         |Prisha  |prisha123@gmail.com  |prisha12345  |prisha12345      | 
         When user adds the following contact:
            |name    |email    |phone     |contactType   |
-           |<name>  |<email>  |<phone>   |<contactType> |
-        Then user should see the following contacts in the contact list:
-           |name    |email    |phone     |contactType   |
-           |<name>  |<email>  |<phone>   |<contactType> |
+           |<name>  |<email>  |<phone>   |<contactType> |           
+        Then user should see the added email "<email>" in the contact list:    
         Examples:
            |name    |email                |phone     |contactType  |
-           |Susmita |susmita412@gmail.com |984635346 |Personal     |
-           |Sita    |sita412@gmail.com    |984635446 |Professional |    
-           |Gita    |gita412@gmail.com    |          |Professional | 
+           |Susmita |susmita412@gmail.com |984635346 |personal     |
+         #   |Sita    |sita412@gmail.com    |984635446 |professional |
+         #   |Gita    |gita412@gmail.com    |          |professional |
 
-     Scenario Outline: User add contacts with invalid email pattern
+     Scenario Outline: User adds multiple contacts with valid inputs
+        Given user has been navigated to registration page
+        And the user has been registered with following credentials:
+         |name    |email                |password     |confirmPassword  |
+         |Prisha  |prisha123@gmail.com  |prisha12345  |prisha12345      | 
         When user adds the following contact:
-           |name    |email    |phone     |contactType   |
-           |<name>  |<email>  |<phone>   |<contactType> |  
-        Then user should see the message "<error>"
+         |name    |email                |phone     |contactType  |
+         |Susmita |susmita412@gmail.com |984635346 |personal     |
+         |Sita    |sita412@gmail.com    |984635446 |professional |
+         |Gita    |gita412@gmail.com    |          |professional |
+        Then user should see the added email "susmita412@gmail.com" in the contact list:
         Examples:
-           |name    |email                |phone     |contactType  |error                         |
-           |Susmita |susmita412gmail.com  |984635346 |Personal     |missing @ symbol              |
-           |Susmita |@gmail.com           |          |Personal     |part before @ should be given |
-           |Sita    |sita412gmail.com     |984635446 |Professional |missing @ symbol              |    
-           |Sita    |@gmail.com           |          |Professional |part before @ should be given |
+           |name    |email                |phone     |contactType  |
+           |Susmita |susmita412@gmail.com |984635346 |personal     |
+         #   |Sita    |sita412@gmail.com    |984635446 |professional |
+         #   |Gita    |gita412@gmail.com    |          |professional |
