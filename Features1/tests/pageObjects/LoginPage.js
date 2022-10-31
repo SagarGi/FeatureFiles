@@ -6,6 +6,7 @@ class LoginPage {
     this.logoutSelector = 'span[class="hide-sm"]';
     this.popupSelector = 'div[class="alert alert-danger"]';
   }
+  
   async navigate() {
     await page.goto("http://localhost:3000");
   }
