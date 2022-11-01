@@ -20,10 +20,9 @@ Feature: Register
        And user has been navigated to registration page
        When the user registers with following credentials:
          |name    |email                |password     |confirmPassword  |
-         |Salipa  |salipa123@gmail.com  |salipa12345  |salipa12345      |
+         |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      | 
        Then user should see the message "User already exists. Please choose another email address."
         
-
     Scenario Outline: New user registers with invalid inputs
        When the user registers with following credentials:
        |name  |email   |password   |confirmPassword|
