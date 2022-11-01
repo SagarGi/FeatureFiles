@@ -6,9 +6,7 @@ class RegisterPage {
     this.passwordSelector = "//input[@name='password']";
     this.confirmPassword = "//input[@name='password2']";
     this.registerBtnSelector = "//input[@value='Register']";
-    this.logoutBtnSelector = "//span[@class='hide-sm']";
     this.alertMsgSelector = "//div[@class='alert alert-danger']";
-    this.greetingSelector = "//li[1]";
   }
 
   async navigateToRegistrationPage() {
@@ -24,10 +22,6 @@ class RegisterPage {
       await page.fill(this.confirmPassword, data.confirmPassword);
       await page.click(this.registerBtnSelector);
     }
-  }
-
-  async logout() {
-    await page.click(this.logoutBtnSelector);
   }
 }
 module.exports = { RegisterPage };

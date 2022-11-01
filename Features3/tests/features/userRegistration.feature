@@ -16,6 +16,7 @@ Feature: Register new user account
         Given account has been created with following credentials
             |name|  email      |password|confirmPassword|
             |abc |abc@gmail.com|abc12345|abc12345       |  
+        And user has navigated to home page
         And user has logged out 
         And User has navigated to register page
         When User registers new account entering following credentials

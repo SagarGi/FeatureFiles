@@ -1,8 +1,10 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 const { RegisterPage } = require("../pageObjects/registerPage");
+const { HomePage } = require("../pageObjects/homePage");
 
 const registerPage = new RegisterPage();
+const homePage = new HomePage();
 
 Given("User has navigated to register page", async function () {
   await registerPage.navigateToRegistrationPage();
@@ -20,12 +22,7 @@ When(
 Then(
   "new user should be navigated to Contact Fox Home page",
   async function () {
-    const logoutBtnLocator = await page.locator(registerPage.logoutBtnSelector);
-
-    await expect(logoutBtnLocator).toBeVisible();
-    await expect(page.locator(registerPage.greetingSelector)).toContainText(
-      "Hello, "
-    );
+    await homePage.navigateToHomePage();
   }
 );
 
@@ -36,8 +33,12 @@ Given(
   }
 );
 
+Given("user has navigated to home page", async function () {
+  await homePage.navigateToHomePage();
+});
+
 Given("user has logged out", async function () {
-  await registerPage.logout();
+  await homePage.logout();
 });
 
 Then(
