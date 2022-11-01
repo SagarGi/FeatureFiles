@@ -12,7 +12,10 @@ Given("the user has navigated to the register page", async function () {
 });
 
 When("the user enters following user information", async function (dataTable) {
-  await registerPage.userInformationEntered(dataTable);
+  const dataArray = dataTable.hashes();
+  for (let data of dataArray) {
+    await registerPage.userInformationEntered(data);
+  }
 });
 
 Then(
@@ -26,7 +29,10 @@ Then(
 Given(
   "the user has been registered with following user information",
   async function (dataTable) {
-    await registerPage.userInformationEntered(dataTable);
+    const dataArray = dataTable.hashes();
+    for (let data of dataArray) {
+      await registerPage.userInformationEntered(data);
+    }
   }
 );
 

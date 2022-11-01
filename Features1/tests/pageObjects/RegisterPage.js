@@ -15,15 +15,12 @@ class RegisterPage {
     await page.click(this.registerSelector);
   }
 
-  async userInformationEntered(dataTable) {
-    const dataArray = dataTable.hashes();
-    for (let data of dataArray) {
-      await page.type(this.nameSelector, data.name);
-      await page.type(this.emailSelector, data.email);
-      await page.type(this.passwordSelector, data.password);
-      await page.type(this.confirmPasswordSelector, data.confirmpassword);
-      await page.click(this.registerButtonSelector);
-    }
+  async userInformationEntered(data) {
+    await page.type(this.nameSelector, data.name);
+    await page.type(this.emailSelector, data.email);
+    await page.type(this.passwordSelector, data.password);
+    await page.type(this.confirmPasswordSelector, data.confirmpassword);
+    await page.click(this.registerButtonSelector);
   }
 
   async userLoggedOut() {
