@@ -16,7 +16,7 @@ Given("the user has navigated to the register page", async function () {
 When("the user enters following user information", async function (dataTable) {
   const dataArray = dataTable.hashes();
   for (let data of dataArray) {
-    await registerPage.userInformationEntered(data);
+    await registerPage.registerUser(data);
   }
 });
 
@@ -33,7 +33,7 @@ Given(
   async function (dataTable) {
     const dataArray = dataTable.hashes();
     for (let data of dataArray) {
-      await registerPage.userInformationEntered(data);
+      await registerPage.registerUser(data);
     }
   }
 );
