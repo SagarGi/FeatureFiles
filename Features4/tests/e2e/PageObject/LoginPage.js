@@ -14,13 +14,11 @@ class LoginPage{
         await page.type(this.selectorPassword,password);
         await page.click(this.selectorLoginbtn);
     }
-    async invalidCredentials(message){
+    async getErrorMessage(message){
         await page.waitForSelector(this.selectorInvalidcre);
         const errorMessage = await page.locator(this.selectorInvalidcre);
         const [innertext] = await errorMessage.allInnerTexts();
-        if(innertext.trim() !== message.trim()){
-        throw new Error("Message not Found");
-     }
+        return innertext;
     }
 }
 module.exports={LoginPage};

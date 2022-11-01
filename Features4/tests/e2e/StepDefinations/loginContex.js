@@ -20,6 +20,8 @@ Then('the home page should be displayed on the webUI',async function () {
 
 //For InValid crdentials
 Then('the error message {string} should be popup',async function (message){
-    await loginPage.invalidCredentails(message);
-   
+   const innerText= await loginPage.getErrorMessage(message);
+   if(innerText.trim() !== message.trim()){
+    throw new error("Message not found");
+   }
 });
