@@ -5,7 +5,7 @@ const { RegisterPage } = require("../pageObjects/registerPage");
 const registerPage = new RegisterPage();
 
 Given("User has navigated to register page", async function () {
-  await registerPage.RegisterNavigation();
+  await registerPage.navigateToRegistrationPage();
 });
 
 When(
@@ -13,8 +13,7 @@ When(
   async function (dataTable) {
     const inputDatas = dataTable.hashes();
 
-    await registerPage.fillRegisterInputFields(inputDatas);
-    await registerPage.clickRegisterBtn();
+    await registerPage.fillRegisterForm(dataTable);
   }
 );
 
@@ -33,15 +32,12 @@ Then(
 Given(
   "account has been created with following credentials",
   async function (dataTable) {
-    const inputDatas = dataTable.hashes();
-
-    await registerPage.fillRegisterInputFields(inputDatas);
-    await registerPage.clickRegisterBtn();
+    await registerPage.fillRegisterForm(dataTable);
   }
 );
 
 Given("user has logged out", async function () {
-  await registerPage.clickLogoutBtn();
+  await registerPage.logout();
 });
 
 Then(

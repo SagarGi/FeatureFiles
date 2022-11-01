@@ -1,5 +1,6 @@
 class RegisterPage {
   constructor() {
+    this.registerPageURL = "http://localhost:3000/register";
     this.nameSelector = "//input[@name='name']";
     this.emailSelector = "//input[@name='email']";
     this.passwordSelector = "//input[@name='password']";
@@ -10,22 +11,22 @@ class RegisterPage {
     this.greetingSelector = "//li[1]";
   }
 
-  async RegisterNavigation() {
-    await page.goto("http://localhost:3000/register");
+  async navigateToRegistrationPage() {
+    await page.goto(this.registerPageURL);
   }
 
-  async fillRegisterInputFields(inputDatas) {
-    await page.fill(this.nameSelector, inputDatas[0].name);
-    await page.fill(this.emailSelector, inputDatas[0].email);
-    await page.fill(this.passwordSelector, inputDatas[0].password);
-    await page.fill(this.confirmPassword, inputDatas[0].confirmPassword);
-  }
-
-  async clickRegisterBtn() {
+  async fillRegisterForm(dataTable) {
+    const inputDatas = dataTable.hashes();
+    for (let data of inputDatas) {
+      await page.fill(this.nameSelector, data.name);
+      await page.fill(this.emailSelector, data.email);
+      await page.fill(this.passwordSelector, data.password);
+      await page.fill(this.confirmPassword, data.confirmPassword);
+    }
     await page.click(this.registerBtnSelector);
   }
 
-  async clickLogoutBtn() {
+  async logout() {
     await page.click(this.logoutBtnSelector);
   }
 }
