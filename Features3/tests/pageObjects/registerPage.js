@@ -22,8 +22,8 @@ class RegisterPage {
       await page.fill(this.emailSelector, data.email);
       await page.fill(this.passwordSelector, data.password);
       await page.fill(this.confirmPassword, data.confirmPassword);
+      await page.click(this.registerBtnSelector);
     }
-    await page.click(this.registerBtnSelector);
   }
 
   async logout() {
