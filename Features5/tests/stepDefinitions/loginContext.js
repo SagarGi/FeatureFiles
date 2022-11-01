@@ -2,8 +2,10 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 const { LoginPage } = require("../pageObjects/loginPage"); //importing loginpage.js(pageobject)
+const { HomePage } = require("../pageObjects/homePage");
 
 const loginPage = new LoginPage(); //creation of object of class-LoginPage
+const homePage= new HomePage();
 
 Given("user has been navigated to login page", async function () {
   console.log("user has been navigated to login page");
@@ -18,7 +20,7 @@ When(
 );
 
 Then("user should be navigated to home page", async function () {
-  await expect(page.locator(loginPage.logoutSelector)).toBeVisible();
+  await expect(page.locator(homePage.logoutSelector)).toBeVisible();
 });
 
 //invalid Scenario

@@ -2,7 +2,10 @@ const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 
 const { RegistrationPage } = require("../pageObjects/registrationPage");
+const { HomePage } = require("../pageObjects/homePage");
+
 const registrationPage = new RegistrationPage();
+const homePage = new HomePage();
 
 Given("user has been navigated to registration page", async function () {
   console.log("navigated to registration page");
@@ -31,16 +34,16 @@ Given(
 );
 
 Given("the user has been navigated to homepage", async function () {
-  await page.isVisible(registrationPage.logoutSelector);
+  await page.isVisible(homePage.logoutSelector);
 });
 
 Given("the user log outs", async function () {
-  await page.click(registrationPage.logoutSelector);
+  await page.click(homePage.logoutSelector);
 });
 
 Then("user should be navigated to the homepage", async function () {
   console.log("navigated to homepage");
-  await page.isVisible(registrationPage.logoutSelector);
+  await page.isVisible(homePage.logoutSelector);
 });
 
 //invalid credentials

@@ -7,13 +7,13 @@ class LoginPage {
     this.emailSelector = "input[name='email']";
     this.passwordSelector = "input[name='password']";
     this.loginSelector = "input[value='Login']";
-    this.logoutSelector = "span[class='hide-sm']";
     this.popoverSelector = "div[class='alert alert-danger']";
+    this.loginURL= "http://localhost:3000";
   }
 
   async navigate() {
     //navigation
-    await page.goto("http://localhost:3000");
+    await page.goto(this.loginURL);
   }
 
   async enterCredentials(email, password) {
