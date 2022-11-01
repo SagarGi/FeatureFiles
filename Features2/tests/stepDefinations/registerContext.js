@@ -8,10 +8,6 @@ const homePage = new HomePage();
 
 setDefaultTimeout(60 * 1000);
 
-Given("the user has clicked Register button", async function () {
-  await registerPage.clickRegisterButton();
-});
-
 Given(
   "the user has been navigated to the Registration page",
   async function () {

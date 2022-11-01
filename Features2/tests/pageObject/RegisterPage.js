@@ -10,9 +10,6 @@ class RegisterPage {
     this.messageSelector = 'div[class="alert alert-danger"]';
     this.registerUrl = "http://localhost:3000/register";
   }
-  async clickRegisterButton() {
-    await page.click(this.registerSelector);
-  }
 
   async navigateToRegisterPage() {
     await page.goto(this.registerUrl);
