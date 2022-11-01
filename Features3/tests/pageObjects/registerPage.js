@@ -13,15 +13,12 @@ class RegisterPage {
     await page.goto(this.registerPageURL);
   }
 
-  async fillRegisterForm(dataTable) {
-    const inputDatas = dataTable.hashes();
-    for (let data of inputDatas) {
-      await page.fill(this.nameSelector, data.name);
-      await page.fill(this.emailSelector, data.email);
-      await page.fill(this.passwordSelector, data.password);
-      await page.fill(this.confirmPassword, data.confirmPassword);
-      await page.click(this.registerBtnSelector);
-    }
+  async registerAUser(data) {
+    await page.fill(this.nameSelector, data.name);
+    await page.fill(this.emailSelector, data.email);
+    await page.fill(this.passwordSelector, data.password);
+    await page.fill(this.confirmPassword, data.confirmPassword);
+    await page.click(this.registerBtnSelector);
   }
 }
 module.exports = { RegisterPage };

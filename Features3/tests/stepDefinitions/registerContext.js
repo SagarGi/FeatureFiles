@@ -14,8 +14,9 @@ When(
   "User registers new account entering following credentials",
   async function (dataTable) {
     const inputDatas = dataTable.hashes();
-
-    await registerPage.fillRegisterForm(dataTable);
+    for (let data of inputDatas) {
+      await registerPage.registerAUser(data);
+    }
   }
 );
 
@@ -29,7 +30,10 @@ Then(
 Given(
   "account has been created with following credentials",
   async function (dataTable) {
-    await registerPage.fillRegisterForm(dataTable);
+    const inputDatas = dataTable.hashes();
+    for (let data of inputDatas) {
+      await registerPage.registerAUser(data);
+    }
   }
 );
 
