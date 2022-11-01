@@ -1,43 +1,24 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
+const { LoginPage } = require("../pageObjects/LoginPage");
+const { RegisterPage } = require("../pageObjects/RegisterPage");
 
-const registerSelector = 'a[href="/register"]';
-const nameSelector = 'input[name="name"]';
-const emailSelector = 'input[name="email"]';
-const passwordSelector = 'input[name="password"]';
-const confirmPasswordSelector = 'input[name="password2"]';
-const registerButtonSelector = 'input[type="submit"]';
-const errorMsgSelector = 'div[class="alert alert-danger"]';
-const logoutSelector = 'span[class="hide-sm"]';
+const registerPage = new RegisterPage();
+const loginPage = new LoginPage();
 
 Given("the user has navigated to the register page", async function () {
-  await page.goto("http://localhost:3000");
-  await page.click(registerSelector);
+  await loginPage.navigate();
+  await registerPage.navigate();
 });
 
-When(
-  "the user enters following user information",
-  async function (dataTable) {
-    const dataArray = dataTable.hashes();
-    for (i = 0; i < dataArray.length; i++) {
-      const individualData = dataArray[i];
-      const name = individualData.name;
-      const email = individualData.email;
-      const password = individualData.password;
-      const confirmpassword = individualData.confirmpassword;
+When("the user enters following user information", async function (dataTable) {
+  await registerPage.userInformationEntered(dataTable);
+});
 
-      await page.type(nameSelector, name);
-      await page.type(emailSelector, email);
-      await page.type(passwordSelector, password);
-      await page.type(confirmPasswordSelector, confirmpassword);
-      await page.click(registerButtonSelector);
-    }
-  }
-);
 Then(
   "error message {string} should pop up on the webUI",
-    async function (error) {
-    const errorMsgLocator = page.locator(errorMsgSelector);
+  async function (error) {
+    const errorMsgLocator = page.locator(registerPage.errorMsgSelector);
     await expect(errorMsgLocator).toHaveText(error);
   }
 );
@@ -45,29 +26,15 @@ Then(
 Given(
   "the user has been registered with following user information",
   async function (dataTable) {
-    const dataArray = dataTable.hashes();
-    for (i = 0; i < dataArray.length; i++) {
-      const individualData = dataArray[i];
-      const name = individualData.name;
-      const email = individualData.email;
-      const password = individualData.password;
-      const confirmpassword = individualData.confirmpassword;
-
-      await page.type(nameSelector, name);
-      await page.type(emailSelector, email);
-      await page.type(passwordSelector, password);
-      await page.type(confirmPasswordSelector, confirmpassword);
-      await page.click(registerButtonSelector);
-    }
+    await registerPage.userInformationEntered(dataTable);
   }
 );
 
 Given("the home page has been displayed on the webUI", async function () {
-  const logoutLocator = page.locator(logoutSelector);
+  const logoutLocator = page.locator(registerPage.logoutSelector);
   await expect(logoutLocator).toBeVisible();
 });
 
 Given("user has logged out", async function () {
-  await page.click(logoutSelector);
-  //await page.pause();
+  await registerPage.userLoggedOut();
 });
