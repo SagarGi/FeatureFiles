@@ -9,13 +9,12 @@ Given("a user has navigated to the login dashboard", async function () {
   console.log("user has navigated to the login dashboard");
 
   await loginPage.navigateToLoginPage();
-  // await page.pause();
 });
 
 When(
   "the user enters the credentials with email {string} and Password {string}",
   async function (email, password) {
-    await loginPage.Login(email, password);
+    await loginPage.login(email, password);
   }
 );
 Then("the user should  be naviaged to the homepage", async function () {
@@ -27,7 +26,6 @@ Then(
   "the user should be given invalid credentials {string}",
   async function (errorMessage) {
     const innerText = await loginPage.getErrorMessageText();
-    // await expect(innerText.trim()).toBe(errorMessage)
     console.log("The user entered to the Loginpage");
     if (innerText.trim() !== errorMessage) {
       throw new Error("Expected message not found");

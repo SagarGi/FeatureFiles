@@ -12,7 +12,7 @@ class LoginPage {
     await page.goto(this.baseUrl);
   }
 
-  async Login(email, password) {
+  async login(email, password) {
     await page.type(this.emailSelector, email);
     await page.type(this.passwordSelector, password);
     await page.click(this.loginButtonSelector);

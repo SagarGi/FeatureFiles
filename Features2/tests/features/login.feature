@@ -20,6 +20,7 @@ Feature:login feature
             |email                  |password |message             |
             |abcdefghij345@gmail.com|236625364| Invalid credentials.|
         
+# It is commited because no stepdefinations created and kept because it may be required later
 
     # Scenario Outline:when you input invalid email
     #     Given a user has navigated to the login dashboard
