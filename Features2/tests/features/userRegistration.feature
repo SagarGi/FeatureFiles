@@ -22,15 +22,18 @@ Feature:User registration
             When the user enters the name with "Rita" and email with "rita@gmail.com" and password with "password" and confirm password with "password"
             Then the user will hovered with the message "User already exits. Please choose another email address."
 
-        Scenario Outline:when you input invalid email while registration
-            When the user enters with a "<email>"
-            Then the user will be given a "<message>"
-            Examples:
-                | email                   | message|
-                | abchefg98gmailcom       | Please enter an email address |
-                | rits98.com              | Please enter an email address |
-                | rira@gmail              |                               |
-                | risahgdgajda36gmail.com | Please enter an email address |
+
+# this was commented because we haven't created stepDefinations for this scenario
+
+        # Scenario Outline:when you input invalid email while registration
+        #     When the user enters with a "<email>"
+        #     Then the user will be given a "<message>"
+        #     Examples:
+        #         | email                   | message|
+        #         | abchefg98gmailcom       | Please enter an email address |
+        #         | rits98.com              | Please enter an email address |
+        #         | rira@gmail              |                               |
+        #         | risahgdgajda36gmail.com | Please enter an email address |
             
         Scenario:when you give different  password and confirm password
             When the user enters the name with "Rita" and email with "rita@gmail.com" and password with "password" and confirm password with "confirmpassword"

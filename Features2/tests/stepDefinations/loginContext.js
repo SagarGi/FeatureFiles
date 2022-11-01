@@ -1,8 +1,10 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 const { LoginPage } = require("../pageObject/LoginPage");
+const { HomePage } = require("../pageObject/HomePage");
 
 const loginPage = new LoginPage();
+const homePage = new HomePage();
 
 Given("a user has navigated to the login dashboard", async function () {
   // Write code here that turns the phrase above into concrete actions
@@ -18,7 +20,7 @@ When(
   }
 );
 Then("the user should  be naviaged to the homepage", async function () {
-  const logoutLocator = page.locator(loginPage.logoutButtonSelector);
+  const logoutLocator = page.locator(homePage.logoutSelector);
   await expect(logoutLocator).toBeVisible();
 });
 
