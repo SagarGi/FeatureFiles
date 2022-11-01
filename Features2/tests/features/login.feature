@@ -20,15 +20,16 @@ Feature:login feature
             |email                  |password |message             |
             |abcdefghij345@gmail.com|236625364| Invalid credentials.|
         
+# It is commited because no stepdefinations created and kept because it may be required later
 
-    Scenario Outline:when you input invalid email
-        Given a user has navigated to the login dashboard
-        When the user enters with a "<email>"
-        Then the user should be given a "<message>"
-        Examples:
-            | email                   | message                       |
-            | abchefg98gmailcom       |  Please enter an email address|
-            | rits98.com              | Please enter an email address |
-            | rira@gmail              |                               |
-            | risahgdgajda36gmail.com | Please enter an email address |
+    # Scenario Outline:when you input invalid email
+    #     Given a user has navigated to the login dashboard
+    #     When the user enters with a "<email>"
+    #     Then the user should be given a "<message>"
+    #     Examples:
+    #         | email                   | message                       |
+    #         | abchefg98gmailcom       |  Please enter an email address|
+    #         | rits98.com              | Please enter an email address |
+    #         | rira@gmail              |                               |
+    #         | risahgdgajda36gmail.com | Please enter an email address |
 
