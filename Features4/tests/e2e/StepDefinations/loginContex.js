@@ -6,7 +6,7 @@ const loginPage= new LoginPage();
 
 Given("the user has navigated to the login page", async function () {
     console.log("The user has navigated to the login page:");
-    await loginPage.navigate();
+    await loginPage.navigateToHomePage();
 });
 
 When('the user enters email address as {string} and password as {string}',async function (email, password) {
@@ -19,12 +19,7 @@ Then('the home page should be displayed on the webUI',async function () {
 });
 
 //For InValid crdentials
-Then('the error message {string} should be popup',async function (message) {
-   await page.waitForSelector(loginPage.selectorInvalidcre);
-   const errorMessage = await page.locator(loginPage.selectorInvalidcre);
-   const [innertext] = await errorMessage.allInnerTexts();
-   console.log("The user entered to the LoginPage");
-   if(innertext.trim() !== message.trim()){
-    throw new Error("Message not Found");
-   }
+Then('the error message {string} should be popup',async function (message){
+    await loginPage.invalidCredentails(message);
+   
 });

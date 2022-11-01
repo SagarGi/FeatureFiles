@@ -15,7 +15,6 @@ Given('the user has navigated to the register page', async function () {
  await page.click(registersSelector);
 });
 
-
 When('the user registers with the following credentials', async function (dataTable) {
  const dataArray=dataTable.hashes();
  for(i=0; i<dataArray.length; i++){
@@ -44,10 +43,10 @@ When('the user registers with the following credentials', async function (dataTa
   await page.type(selectorEmail ,email);
   await page.type(selectorPassword ,password);
   await page.type(selectorConfirmPass ,confirmPassword);
-  await page.click(selectorRegister);
+  await page.click(selectorRegisterbtn);
   }
 });
 
-Given('the user logged out from the home page',  async function () {
- await page.click(selectorLogout);
+Given('the user logged out from the home page',async function () {
+  await page.click(selectorLogout);
 });
