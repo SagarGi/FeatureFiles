@@ -3,7 +3,7 @@ class LoginPage{
         this.selectorEmail = "input[name='email']";
         this.selectorPassword= "input[name='password']";
         this.selectorLoginbtn= "input[type='submit']";
-        this.selectorLogout ="span[class ='hide-sm']"
+        this.selectorLogout ="span[class ='hide-sm']";
         this.selectorInvalidcre = "div[class = 'alert alert-danger']";
     }     
     async navigateToHomePage(){
