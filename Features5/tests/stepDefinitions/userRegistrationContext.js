@@ -8,14 +8,12 @@ const registrationPage = new RegistrationPage();
 const homePage = new HomePage();
 
 Given("user has been navigated to registration page", async function () {
-  console.log("navigated to registration page");
   await registrationPage.navigateRegistrationPage();
 });
 
 When(
   "the user registers with following credentials:",
   async function (dataTable) {
-    console.log("enters valid credentials");
     const myData = dataTable.hashes(); //it gives an array
     for (let data of myData) {
       await registrationPage.registerUser(data);
