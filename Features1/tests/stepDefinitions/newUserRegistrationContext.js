@@ -2,13 +2,15 @@ const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 const { LoginPage } = require("../pageObjects/LoginPage");
 const { RegisterPage } = require("../pageObjects/RegisterPage");
+const { HomePage } = require("../pageObjects/HomePage");
 
 const registerPage = new RegisterPage();
 const loginPage = new LoginPage();
+const homePage = new HomePage();
 
 Given("the user has navigated to the register page", async function () {
   await loginPage.navigate();
-  await registerPage.navigate();
+  await registerPage.navigateToRegisterPage();
 });
 
 When("the user enters following user information", async function (dataTable) {
@@ -37,10 +39,10 @@ Given(
 );
 
 Given("the home page has been displayed on the webUI", async function () {
-  const logoutLocator = page.locator(registerPage.logoutSelector);
+  const logoutLocator = page.locator(homePage.logoutSelector);
   await expect(logoutLocator).toBeVisible();
 });
 
 Given("user has logged out", async function () {
-  await registerPage.userLoggedOut();
+  await homePage.userLoggedOut();
 });

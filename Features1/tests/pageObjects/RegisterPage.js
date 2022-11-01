@@ -1,4 +1,3 @@
-const { LoginPage } = require("../pageObjects/LoginPage");
 
 class RegisterPage {
   constructor() {
@@ -9,13 +8,13 @@ class RegisterPage {
     this.confirmPasswordSelector = 'input[name="password2"]';
     this.registerButtonSelector = 'input[type="submit"]';
     this.errorMsgSelector = 'div[class="alert alert-danger"]';
-    this.logoutSelector = 'span[class="hide-sm"]';
+    
   }
-  async navigate() {
+  async navigateToRegisterPage() {
     await page.click(this.registerSelector);
   }
 
-  async userInformationEntered(data) {
+  async registerUser(data) {
     await page.type(this.nameSelector, data.name);
     await page.type(this.emailSelector, data.email);
     await page.type(this.passwordSelector, data.password);
@@ -23,9 +22,7 @@ class RegisterPage {
     await page.click(this.registerButtonSelector);
   }
 
-  async userLoggedOut() {
-    await page.click(this.logoutSelector);
-  }
+  
 }
 
 module.exports = { RegisterPage };
