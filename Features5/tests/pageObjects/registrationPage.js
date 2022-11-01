@@ -2,7 +2,7 @@
 
 class RegistrationPage {
   constructor() {
-    //locators
+    //selectors
     this.nameSelector = "input[name='name']";
     this.emailSelector = "input[name='email']";
     this.passwordSelector = "input[name='password']";

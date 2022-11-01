@@ -3,7 +3,7 @@
 
 class LoginPage {
   constructor() {
-    //locators
+    //selectors
     this.emailSelector = "input[name='email']";
     this.passwordSelector = "input[name='password']";
     this.loginSelector = "input[value='Login']";
