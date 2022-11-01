@@ -21,14 +21,14 @@ Feature:login feature
             |abcdefghij345@gmail.com|236625364| Invalid credentials.|
         
 
-    Scenario Outline:when you input invalid email
-        Given a user has navigated to the login dashboard
-        When the user enters with a "<email>"
-        Then the user should be given a "<message>"
-        Examples:
-            | email                   | message                       |
-            | abchefg98gmailcom       |  Please enter an email address|
-            | rits98.com              | Please enter an email address |
-            | rira@gmail              |                               |
-            | risahgdgajda36gmail.com | Please enter an email address |
+    # Scenario Outline:when you input invalid email
+    #     Given a user has navigated to the login dashboard
+    #     When the user enters with a "<email>"
+    #     Then the user should be given a "<message>"
+    #     Examples:
+    #         | email                   | message                       |
+    #         | abchefg98gmailcom       |  Please enter an email address|
+    #         | rits98.com              | Please enter an email address |
+    #         | rira@gmail              |                               |
+    #         | risahgdgajda36gmail.com | Please enter an email address |
 
