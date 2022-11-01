@@ -7,6 +7,7 @@ const {
 } = require("@cucumber/cucumber");
 const { chromium } = require("playwright");
 const clearDatabases = require("./databaseCleaner");
+setDefaultTimeout(60000);
 
 setDefaultTimeout(60000);
 
