@@ -1,73 +1,51 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 
-const nameSelector = "input[name='name']";
-const emailSelector = "input[name='email']";
-const passwordSelector = "input[name='password']";
-const confirmPasswordSelector = "input[name='password2']";
-const navRegisterSelector = "div [href='/register']";
-const registerSelector = "input[value='Register']";
-const loginSelector = "input[value='Login']";
-const logoutSelector = "span[class='hide-sm']";
-const popUpSelector = "div[class='alert alert-danger']";
+const { RegistrationPage } = require("../pageObjects/registrationPage");
+const { HomePage } = require("../pageObjects/homePage");
+
+const registrationPage = new RegistrationPage();
+const homePage = new HomePage();
 
 Given("user has been navigated to registration page", async function () {
-  console.log("navigated to registration page");
-  await page.goto("http://localhost:3000");
-  await page.click(navRegisterSelector);
+  await registrationPage.navigateRegistrationPage();
 });
 
 When(
   "the user registers with following credentials:",
   async function (dataTable) {
-    console.log("enters valid credentials");
     const myData = dataTable.hashes(); //it gives an array
-    for (let i = 0; i < myData.length; i++) {
-      //applying loop to print values of object inside an array
-      const name = myData[i].name;
-      const email = myData[i].email;
-      const password = myData[i].password;
-      const confirmPassword = myData[i].confirmPassword;
-      await page.type(nameSelector, name);
-      await page.type(emailSelector, email);
-      await page.type(passwordSelector, password);
-      await page.type(confirmPasswordSelector, confirmPassword);
-      await page.click(registerSelector);
+    for (let data of myData) {
+      await registrationPage.registerUser(data);
     }
   }
 );
-//user already exists scenario: 
-Given('the user has been registered with following credentials:', async function (dataTable) {
- const myData = dataTable.hashes(); //it gives an array
-  for (let i = 0; i < myData.length; i++) {
-    //applying loop to print values of object inside an array
-    const name = myData[i].name;
-    const email = myData[i].email;
-    const password = myData[i].password;
-    const confirmPassword = myData[i].confirmPassword;
-    await page.type(nameSelector, name);
-    await page.type(emailSelector, email);
-    await page.type(passwordSelector, password);
-    await page.type(confirmPasswordSelector, confirmPassword);
-    await page.click(registerSelector);
+//user already exists scenario:
+Given(
+  "the user has been registered with following credentials:",
+  async function (dataTable) {
+    const myData = dataTable.hashes(); //it gives an array
+    for (let data of myData) {
+      await registrationPage.registerUser(data);
+    }
   }
+);
+
+Given("the user has been navigated to homepage", async function () {
+  await page.isVisible(homePage.logoutSelector);
 });
 
-Given('the user has been navigated to homepage', async function () {
-  await page.isVisible(logoutSelector);
-});
-
-Given('the user log outs', async function () {
-  await page.click(logoutSelector);
+Given("the user log outs", async function () {
+  await page.click(homePage.logoutSelector);
 });
 
 Then("user should be navigated to the homepage", async function () {
   console.log("navigated to homepage");
-  await page.isVisible(logoutSelector);
+  await page.isVisible(homePage.logoutSelector);
 });
 
 //invalid credentials
 
 Then("user should see the message {string}", async function (error) {
-  await expect(page.locator(popUpSelector)).toHaveText(error);
+  await expect(page.locator(registrationPage.popUpSelector)).toHaveText(error);
 });
