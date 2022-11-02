@@ -18,13 +18,6 @@ class RegisterPage{
         await page.type(this.selectorConfirmPass ,data.confirmpassword);
         await page.click(this.selectorRegisterbtn);
     }
-    async reregisterCredentials(data){
-        await page.type(this.selectorName ,data.name);
-        await page.type(this.selectorEmail ,data.email);
-        await page.type(this.selectorPassword ,data.password);
-        await page.type(this.selectorConfirmPass ,data.confirmpassword);
-        await page.click(this.selectorRegisterbtn);
-    }
     async loggedOutFormRegister(){
         await page.click(this.selectorLogout);
     }

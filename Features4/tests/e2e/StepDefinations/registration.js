@@ -20,7 +20,7 @@ When('the user registers with the following credentials', async function (dataTa
  Given('the user has been register with the following credentials', async function (dataTable) {
   const inputData= await dataTable.hashes();
   for(let data of inputData){
-    await registerPage.reregisterCredentials(data);
+    await registerPage.registerCredentials(data);
   }
  });
  
